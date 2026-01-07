@@ -1,0 +1,2861 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elden Ring Rilis Ekspansi Baru "Shadow of the Erdtree" | Hot News Gaming</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+         :root {
+            --primary: #FF6B35;
+            --primary-dark: #E55A2B;
+            --primary-light: #FF9D77;
+            --secondary: #1A1A2E;
+            --secondary-light: #2A2A3E;
+            --accent: #0F4C75;
+            --accent-light: #3B8BC4;
+            --light: #F8F9FA;
+            --gray: #8C8CA1;
+            --dark: #121225;
+            --success: #28A745;
+            --warning: #FFC107;
+            --danger: #DC3545;
+            --shadow-sm: 0 5px 15px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.15);
+            --shadow-xl: 0 30px 60px rgba(0, 0, 0, 0.2);
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-xl: 32px;
+            --transition-fast: 0.2s ease;
+            --transition-normal: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition-slow: 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+            --header-height: 80px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.8;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 80%, rgba(26, 26, 46, 0.9) 0%, rgba(18, 18, 37, 0.95) 100%);
+            z-index: -2;
+        }
+        /* Particle Background */
+        
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        /* Header Ultra Premium */
+        
+        .ultimate-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            background: rgba(18, 18, 37, 0.95);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 107, 53, 0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            transition: var(--transition-normal);
+        }
+        
+        .ultimate-header.scrolled {
+            height: 70px;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .header-container {
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo {
+            position: relative;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 15px;
+        }
+        
+        .logo-glow {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--accent-light));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition-normal);
+        }
+        
+        .logo-glow::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transform: translateX(-100%);
+        }
+        
+        .logo:hover .logo-glow {
+            transform: rotate(15deg) scale(1.1);
+            box-shadow: 0 0 30px rgba(255, 107, 53, 0.5);
+        }
+        
+        .logo:hover .logo-glow::before {
+            animation: shine 1.5s ease-out infinite;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-main {
+            font-size: 28px;
+            font-weight: 900;
+            background: linear-gradient(to right, var(--primary), var(--accent-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 0.5px;
+            line-height: 1;
+        }
+        
+        .logo-sub {
+            font-size: 12px;
+            color: var(--gray);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+        
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .nav-link {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 12px 22px;
+            border-radius: 50px;
+            transition: var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(15, 76, 117, 0.1));
+            opacity: 0;
+            transition: var(--transition-normal);
+            z-index: -1;
+        }
+        
+        .nav-link:hover::before,
+        .nav-link.active::before {
+            opacity: 1;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary);
+        }
+        
+        .nav-icon {
+            margin-right: 8px;
+            font-size: 18px;
+        }
+        
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .action-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .action-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.2), rgba(15, 76, 117, 0.2));
+            opacity: 0;
+            transition: var(--transition-normal);
+        }
+        
+        .action-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            color: var(--primary);
+        }
+        
+        .action-btn:hover::before {
+            opacity: 1;
+        }
+        
+        .subscribe-btn {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border: none;
+            padding: 14px 28px;
+            border-radius: 50px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-normal);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .subscribe-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+            transform: translateX(-100%);
+        }
+        
+        .subscribe-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(255, 107, 53, 0.4);
+        }
+        
+        .subscribe-btn:hover::before {
+            animation: shine 1.5s ease-out infinite;
+        }
+        /* Main Content */
+        
+        .main-content {
+            max-width: 1200px;
+            margin: calc(var(--header-height) + 40px) auto 0;
+            padding: 0 40px;
+            position: relative;
+        }
+        /* Hero Section */
+        
+        .hero-section {
+            position: relative;
+            margin-bottom: 60px;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            position: relative;
+        }
+        
+        .hero-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60%;
+            background: linear-gradient(to top, rgba(18, 18, 37, 0.9), transparent);
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 60px;
+            background: linear-gradient(to top, rgba(18, 18, 37, 0.95), transparent);
+            z-index: 2;
+        }
+        
+        .hero-category {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #FFFFFF, var(--primary-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-subtitle {
+            font-size: 22px;
+            color: var(--gray);
+            margin-bottom: 30px;
+            max-width: 800px;
+            line-height: 1.6;
+        }
+        
+        .hero-meta {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .meta-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 20px;
+        }
+        
+        .meta-content {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .meta-label {
+            font-size: 13px;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .meta-value {
+            font-size: 18px;
+            font-weight: 600;
+            color: white;
+        }
+        /* Breadcrumb */
+        
+        .breadcrumb-nav {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: var(--radius-lg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .breadcrumb-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .breadcrumb-link {
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 15px;
+            transition: var(--transition-normal);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .breadcrumb-link:hover {
+            color: var(--primary);
+        }
+        
+        .breadcrumb-separator {
+            color: var(--gray);
+            font-size: 14px;
+        }
+        
+        .breadcrumb-current {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        /* Content Grid */
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+        
+        @media (max-width: 1100px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* Main Article */
+        
+        .article-container {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: var(--radius-xl);
+            padding: 50px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .article-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+        }
+        
+        .article-content {
+            font-size: 18px;
+            line-height: 1.9;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .article-content p {
+            margin-bottom: 30px;
+        }
+        
+        .article-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: white;
+            margin: 50px 0 25px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .article-content h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 5px;
+            background: var(--primary);
+            border-radius: 5px;
+        }
+        
+        .article-content h3 {
+            font-size: 28px;
+            color: white;
+            margin: 40px 0 20px;
+            font-weight: 700;
+        }
+        
+        .featured-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: var(--radius-lg);
+            margin: 40px 0;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition-slow);
+        }
+        
+        .featured-image:hover {
+            transform: scale(1.01);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .highlight-quote {
+            position: relative;
+            padding: 50px;
+            margin: 50px 0;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.05), rgba(15, 76, 117, 0.05));
+            border-radius: var(--radius-lg);
+            border-left: 5px solid var(--primary);
+            overflow: hidden;
+        }
+        
+        .highlight-quote::before {
+            content: '❝';
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 120px;
+            color: rgba(255, 107, 53, 0.1);
+            font-family: serif;
+            line-height: 1;
+        }
+        
+        .quote-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-style: italic;
+            color: white;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            line-height: 1.5;
+        }
+        
+        .quote-author {
+            font-weight: 600;
+            color: var(--primary);
+            text-align: right;
+            position: relative;
+            z-index: 1;
+            font-size: 18px;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.05), transparent);
+            opacity: 0;
+            transition: var(--transition-normal);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 107, 53, 0.3);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .feature-title {
+            font-size: 20px;
+            color: white;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .feature-desc {
+            color: var(--gray);
+            font-size: 15px;
+        }
+        
+        .article-footer {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .tag {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--gray);
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: var(--transition-normal);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            text-decoration: none;
+        }
+        
+        .tag:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.2);
+        }
+        /* Sidebar */
+        
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .sidebar-widget {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: var(--radius-xl);
+            padding: 35px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .widget-title {
+            font-size: 22px;
+            color: white;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(255, 107, 53, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .widget-title i {
+            color: var(--primary);
+        }
+        
+        .author-card {
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .author-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 40px;
+            font-weight: 700;
+            border: 5px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .author-name {
+            font-size: 22px;
+            color: white;
+            margin-bottom: 10px;
+        }
+        
+        .author-role {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+        
+        .author-bio {
+            color: var(--gray);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        
+        .trending-list {
+            list-style: none;
+        }
+        
+        .trending-item {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .trending-item:last-child {
+            border-bottom: none;
+        }
+        
+        .trending-link {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            transition: var(--transition-normal);
+        }
+        
+        .trending-link:hover .trending-title {
+            color: var(--primary);
+        }
+        
+        .trending-number {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+        
+        .trending-content {
+            flex: 1;
+        }
+        
+        .trending-title {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 16px;
+            transition: var(--transition-normal);
+        }
+        
+        .trending-meta {
+            color: var(--gray);
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .ad-container {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.8), rgba(18, 18, 37, 0.9));
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            text-align: center;
+            border: 2px dashed rgba(255, 107, 53, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ad-label {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--primary);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+        
+        .ad-title {
+            color: var(--primary);
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .ad-desc {
+            color: var(--gray);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .ad-button {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-normal);
+        }
+        
+        .ad-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
+        }
+        /* Social Share Sticky */
+        
+        .social-share-sticky {
+            position: fixed;
+            left: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 100;
+        }
+        
+        @media (max-width: 1400px) {
+            .social-share-sticky {
+                left: 20px;
+            }
+        }
+        
+        @media (max-width: 1100px) {
+            .social-share-sticky {
+                display: none;
+            }
+        }
+        
+        .social-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 22px;
+            text-decoration: none;
+            transition: var(--transition-normal);
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .social-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            transition: var(--transition-normal);
+        }
+        
+        .social-button:hover {
+            transform: translateX(10px) scale(1.1);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .social-button:hover::before {
+            opacity: 1;
+        }
+        
+        .social-button.facebook {
+            background: linear-gradient(135deg, #3b5998, #2d4373);
+        }
+        
+        .social-button.twitter {
+            background: linear-gradient(135deg, #1da1f2, #0c85d0);
+        }
+        
+        .social-button.whatsapp {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+        }
+        
+        .social-button.telegram {
+            background: linear-gradient(135deg, #0088cc, #006699);
+        }
+        
+        .social-button.copy {
+            background: linear-gradient(135deg, #6c757d, #495057);
+        }
+        
+        .social-tooltip {
+            position: absolute;
+            left: 70px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 8px 15px;
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-normal);
+            pointer-events: none;
+        }
+        
+        .social-button:hover .social-tooltip {
+            opacity: 1;
+            visibility: visible;
+            left: 80px;
+        }
+        /* Related Articles */
+        
+        .related-section {
+            margin-bottom: 80px;
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            color: white;
+            font-weight: 800;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+        
+        .section-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition-normal);
+        }
+        
+        .section-link:hover {
+            gap: 15px;
+        }
+        
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .article-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-slow);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-xl);
+            border-color: rgba(255, 107, 53, 0.3);
+        }
+        
+        .card-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: var(--transition-slow);
+        }
+        
+        .article-card:hover .card-image {
+            transform: scale(1.05);
+        }
+        
+        .card-content {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card-category {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            align-self: flex-start;
+        }
+        
+        .card-title {
+            font-size: 22px;
+            color: white;
+            margin-bottom: 15px;
+            line-height: 1.4;
+            font-weight: 700;
+            flex-grow: 1;
+        }
+        
+        .card-excerpt {
+            color: var(--gray);
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+        
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+        
+        .card-meta {
+            color: var(--gray);
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .card-button {
+            background: rgba(255, 107, 53, 0.1);
+            color: var(--primary);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-normal);
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .card-button:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+        /* Comments Section */
+        
+        .comments-section {
+            margin-bottom: 80px;
+        }
+        
+        .comments-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        
+        .comments-title {
+            font-size: 36px;
+            color: white;
+            font-weight: 800;
+        }
+        
+        .comments-count {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        
+        .comment-form-container {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: var(--radius-xl);
+            padding: 40px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+        }
+        
+        .comment-form-title {
+            font-size: 24px;
+            color: white;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 12px;
+            font-weight: 600;
+            color: white;
+            font-size: 16px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 18px 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-md);
+            color: white;
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+            transition: var(--transition-normal);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+        }
+        
+        .form-submit {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            padding: 18px 35px;
+            border-radius: var(--radius-md);
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-normal);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .form-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(255, 107, 53, 0.3);
+        }
+        
+        .comments-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .comment {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: var(--radius-xl);
+            padding: 35px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition-normal);
+            position: relative;
+        }
+        
+        .comment:hover {
+            border-color: rgba(255, 107, 53, 0.2);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .comment-author {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .author-avatar-small {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+        
+        .author-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .author-name {
+            font-size: 18px;
+            color: white;
+            margin-bottom: 5px;
+        }
+        
+        .author-badge {
+            display: inline-block;
+            background: rgba(255, 107, 53, 0.2);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            align-self: flex-start;
+        }
+        
+        .comment-time {
+            color: var(--gray);
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .comment-body {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+            font-size: 16px;
+            margin-bottom: 25px;
+        }
+        
+        .comment-actions {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .action-btn {
+            background: none;
+            border: none;
+            color: var(--gray);
+            cursor: pointer;
+            font-size: 15px;
+            transition: var(--transition-normal);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 15px;
+            border-radius: var(--radius-sm);
+        }
+        
+        .action-btn:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--primary);
+        }
+        
+        .action-btn.liked {
+            color: var(--primary);
+        }
+        /* Footer Ultra Premium */
+        
+        .ultimate-footer {
+            background: linear-gradient(180deg, rgba(18, 18, 37, 0.9) 0%, rgba(10, 10, 20, 0.95) 100%);
+            padding: 80px 0 40px;
+            border-top: 1px solid rgba(255, 107, 53, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-logo-column {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .footer-logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 22px;
+        }
+        
+        .footer-logo-text {
+            font-size: 28px;
+            font-weight: 900;
+            background: linear-gradient(to right, var(--primary), var(--accent-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .footer-description {
+            color: var(--gray);
+            line-height: 1.7;
+            font-size: 15px;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .footer-social-link {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+            transition: var(--transition-normal);
+        }
+        
+        .footer-social-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-5px);
+        }
+        
+        .footer-title {
+            color: white;
+            font-size: 20px;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--primary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-link-item {
+            margin-bottom: 15px;
+        }
+        
+        .footer-link {
+            color: var(--gray);
+            text-decoration: none;
+            transition: var(--transition-normal);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .footer-link:hover {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+        
+        .footer-newsletter {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 30px;
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .newsletter-title {
+            color: white;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .newsletter-input {
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-md);
+            color: white;
+            font-size: 15px;
+        }
+        
+        .newsletter-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .newsletter-button {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-normal);
+        }
+        
+        .newsletter-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.2);
+        }
+        
+        .footer-bottom {
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .copyright {
+            color: var(--gray);
+            font-size: 15px;
+        }
+        
+        .footer-bottom-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .footer-bottom-link {
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 14px;
+            transition: var(--transition-normal);
+        }
+        
+        .footer-bottom-link:hover {
+            color: var(--primary);
+        }
+        /* Floating Action Buttons */
+        
+        .floating-actions {
+            position: fixed;
+            right: 40px;
+            bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            z-index: 100;
+        }
+        
+        @media (max-width: 768px) {
+            .floating-actions {
+                right: 20px;
+                bottom: 20px;
+            }
+        }
+        
+        .floating-btn {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition-normal);
+            cursor: pointer;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .floating-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            transition: var(--transition-normal);
+        }
+        
+        .floating-btn:hover {
+            transform: translateY(-10px) scale(1.1);
+        }
+        
+        .floating-btn:hover::before {
+            opacity: 1;
+        }
+        
+        .floating-btn.home {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        }
+        
+        .floating-btn.top {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+        }
+        
+        .floating-btn.comment {
+            background: linear-gradient(135deg, var(--warning), #ff9800);
+        }
+        
+        .floating-tooltip {
+            position: absolute;
+            right: 75px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 8px 15px;
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-normal);
+            pointer-events: none;
+        }
+        
+        .floating-btn:hover .floating-tooltip {
+            opacity: 1;
+            visibility: visible;
+            right: 85px;
+        }
+        /* Animations */
+        
+        @keyframes shine {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        /* Responsive Design */
+        
+        @media (max-width: 1200px) {
+            .header-container,
+            .main-content,
+            .footer-container {
+                padding: 0 30px;
+            }
+            .hero-title {
+                font-size: 48px;
+            }
+            .section-title,
+            .comments-title {
+                font-size: 32px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .main-nav {
+                display: none;
+            }
+            .hero-title {
+                font-size: 40px;
+            }
+            .hero-subtitle {
+                font-size: 20px;
+            }
+            .article-content h2 {
+                font-size: 32px;
+            }
+            .articles-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container,
+            .main-content,
+            .footer-container {
+                padding: 0 20px;
+            }
+            .hero-overlay {
+                padding: 40px;
+            }
+            .hero-title {
+                font-size: 32px;
+            }
+            .hero-subtitle {
+                font-size: 18px;
+            }
+            .article-container {
+                padding: 30px;
+            }
+            .article-content h2 {
+                font-size: 28px;
+            }
+            .quote-text {
+                font-size: 24px;
+            }
+            .section-title,
+            .comments-title {
+                font-size: 28px;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            .floating-actions {
+                right: 15px;
+                bottom: 15px;
+            }
+            .floating-btn {
+                width: 55px;
+                height: 55px;
+                font-size: 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-overlay {
+                padding: 30px;
+            }
+            .hero-title {
+                font-size: 28px;
+            }
+            .hero-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+            .article-content h2 {
+                font-size: 24px;
+            }
+            .quote-text {
+                font-size: 20px;
+            }
+            .section-title,
+            .comments-title {
+                font-size: 24px;
+            }
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+            .comment-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+        /* Utility Classes */
+        
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <!-- Header Ultra Premium -->
+    <header class="ultimate-header">
+        <div class="header-container">
+            <div class="logo-wrapper">
+                <a href="index.html" class="logo">
+                    <div class="logo-glow">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <div class="logo-text">
+                        <div class="logo-main">HOT NEWS</div>
+                        <div class="logo-sub">GAMING PORTAL</div>
+                    </div>
+                </a>
+            </div>
+
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link active">
+                    <i class="fas fa-home nav-icon"></i>
+                    <span>Beranda</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="fas fa-gamepad nav-icon"></i>
+                    <span>Gaming</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="fas fa-newspaper nav-icon"></i>
+                    <span>Berita</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="fas fa-video nav-icon"></i>
+                    <span>Video</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="fas fa-info-circle nav-icon"></i>
+                    <span>Tentang</span>
+                </a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="action-btn search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="subscribe-btn">
+                    <i class="fas fa-star"></i>
+                    <span>Subscribe</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Social Share Sticky -->
+    <div class="social-share-sticky">
+        <a href="#" class="social-button facebook">
+            <i class="fab fa-facebook-f"></i>
+            <span class="social-tooltip">Bagikan ke Facebook</span>
+        </a>
+        <a href="#" class="social-button twitter">
+            <i class="fab fa-twitter"></i>
+            <span class="social-tooltip">Bagikan ke Twitter</span>
+        </a>
+        <a href="#" class="social-button whatsapp">
+            <i class="fab fa-whatsapp"></i>
+            <span class="social-tooltip">Bagikan ke WhatsApp</span>
+        </a>
+        <a href="#" class="social-button telegram">
+            <i class="fab fa-telegram-plane"></i>
+            <span class="social-tooltip">Bagikan ke Telegram</span>
+        </a>
+        <a href="#" class="social-button copy" id="copy-link">
+            <i class="fas fa-link"></i>
+            <span class="social-tooltip">Salin Tautan</span>
+        </a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <img src="https://i.pinimg.com/1200x/6f/58/80/6f58805c90c7a01f21f7c27bb514e171.jpg" alt="Elden Ring" class="hero-image">
+            <div class="hero-overlay">
+                <div class="hero-category">
+                    <i class="fas fa-gamepad"></i> BERITA GAMING EKSKLUSIF
+                </div>
+                <h1 class="hero-title">Elden Ring Rilis Ekspansi Baru "Shadow of the Erdtree"</h1>
+                <p class="hero-subtitle">FromSoftware mengumumkan ekspansi besar untuk game RPG fenomenal mereka dengan konten yang lebih menantang dan petualangan epik di dunia Lands Between yang memukau.</p>
+                <div class="hero-meta">
+                    <div class="meta-item">
+                        <div class="meta-icon">
+                            <i class="far fa-clock"></i>
+                        </div>
+                        <div class="meta-content">
+                            <div class="meta-label">DIPUBLIKASIKAN</div>
+                            <div class="meta-value">2 jam yang lalu</div>
+                        </div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-icon">
+                            <i class="far fa-comment"></i>
+                        </div>
+                        <div class="meta-content">
+                            <div class="meta-label">KOMENTAR</div>
+                            <div class="meta-value">45</div>
+                        </div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-icon">
+                            <i class="far fa-eye"></i>
+                        </div>
+                        <div class="meta-content">
+                            <div class="meta-label">DILIHAT</div>
+                            <div class="meta-value">5.247</div>
+                        </div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-icon">
+                            <i class="fas fa-user-edit"></i>
+                        </div>
+                        <div class="meta-content">
+                            <div class="meta-label">PENULIS</div>
+                            <div class="meta-value">Redaksi Gaming</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb-nav">
+            <div class="breadcrumb-item">
+                <a href="index.html" class="breadcrumb-link">
+                    <i class="fas fa-home"></i>
+                    <span>Beranda</span>
+                </a>
+                <span class="breadcrumb-separator">/</span>
+            </div>
+            <div class="breadcrumb-item">
+                <a href="#" class="breadcrumb-link">
+                    <i class="fas fa-gamepad"></i>
+                    <span>Gaming</span>
+                </a>
+                <span class="breadcrumb-separator">/</span>
+            </div>
+            <div class="breadcrumb-item">
+                <a href="#" class="breadcrumb-link">
+                    <i class="fas fa-vr-cardboard"></i>
+                    <span>Game RPG</span>
+                </a>
+                <span class="breadcrumb-separator">/</span>
+            </div>
+            <div class="breadcrumb-item">
+                <span class="breadcrumb-current">Elden Ring: Shadow of the Erdtree</span>
+            </div>
+        </nav>
+
+        <!-- Content Grid -->
+        <div class="content-grid">
+            <!-- Main Article -->
+            <article class="article-container animate-on-scroll">
+                <div class="article-content">
+                    <p>FromSoftware, developer legendaris di balik seri Dark Souls, Bloodborne, dan Sekiro, telah secara resmi mengumumkan ekspansi besar pertama untuk game RPG open-world fenomenal mereka, Elden Ring. Ekspansi yang diberi judul "Shadow of
+                        the Erdtree" ini dijanjikan akan membawa pemain ke petualangan baru yang lebih luas, dengan konten yang lebih menantang, dan cerita yang lebih dalam di dunia Lands Between yang memukau.</p>
+
+                    <img src="https://i.pinimg.com/1200x/cb/55/0d/cb550dc2f6b013b57193306dedf10aea.jpg" alt="Elden Ring Gameplay" class="featured-image">
+
+                    <h2>Petualangan Baru di Dunia Lands Between</h2>
+                    <p>Ekspansi "Shadow of the Erdtree" akan memperkenalkan wilayah baru yang luas dan misterius, yang terletak di bayang-bayang Erdtree raksasa. Pemain akan menjelajahi area yang sebelumnya tidak dapat diakses, menghadapi musuh baru yang
+                        lebih kuat dan kompleks, serta menemukan senjata legendaris dengan kemampuan khusus yang dapat mengubah strategi pertempuran.</p>
+
+                    <div class="highlight-quote">
+                        <p class="quote-text">"Dengan ekspansi Shadow of the Erdtree, kami ingin memberikan pengalaman yang lebih mendalam dan menantang bagi para pemain yang telah menjelajahi setiap sudut Lands Between. Ini akan menjadi perjalanan paling epik yang pernah
+                            kami buat."</p>
+                        <p class="quote-author">— Hidetaka Miyazaki, Direktur Kreatif FromSoftware</p>
+                    </div>
+
+                    <p>Menurut pengumuman resmi, ekspansi ini akan menambahkan lebih dari 15 jam konten gameplay baru, termasuk bos-bos dengan mekanik pertarungan yang unik dan dungeon-dungeon yang dirancang dengan kompleksitas tinggi khas FromSoftware.
+                        Para pemain veteran dapat mengharapkan tingkat kesulitan yang bahkan lebih tinggi dari konten dasar game, dengan mode tantangan ekstra untuk yang paling berani.</p>
+
+                    <h2>Fitur dan Konten Baru</h2>
+                    <p>Ekspansi "Shadow of the Erdtree" akan membawa berbagai penambahan konten yang signifikan:</p>
+
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-map"></i>
+                            </div>
+                            <h3 class="feature-title">Wilayah Baru yang Luas</h3>
+                            <p class="feature-desc">Jelajahi area baru yang misterius dengan ekosistem unik, cuaca dinamis, dan rahasia yang tersembunyi.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-skull-crossbones"></i>
+                            </div>
+                            <h3 class="feature-title">Musuh dan Boss Baru</h3>
+                            <p class="feature-desc">Hadapi lebih dari 20 tipe musuh baru dan 10 boss legendaris dengan AI canggih dan pola serangan kompleks.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-gem"></i>
+                            </div>
+                            <h3 class="feature-title">Senjata & Sihir Baru</h3>
+                            <p class="feature-desc">Temukan lebih dari 50 senjata, sihir, dan kemampuan baru dengan efek visual yang memukau.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-helmet-battle"></i>
+                            </div>
+                            <h3 class="feature-title">Armor & Talisman</h3>
+                            <p class="feature-desc">Koleksi lebih dari 30 set armor baru dan 15 talisman dengan efek khusus yang belum pernah dilihat sebelumnya.</p>
+                        </div>
+                    </div>
+
+                    <h2>Cerita dan Lore yang Diperdalam</h2>
+                    <p>Ekspansi ini akan mengungkap lebih banyak misteri tentang dunia Elden Ring, termasuk asal-usul sebenarnya dari Erdtree, rahasia di balik peristiwa Shattering, dan nasib karakter-karakter penting yang hanya disinggung dalam game dasar.
+                        Pemain akan bertemu dengan karakter baru yang akan membantu atau justru menghalangi perjalanan mereka menuju kebenaran.</p>
+
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Elden Ring World" class="featured-image">
+
+                    <h2>Rilis dan Harga</h2>
+                    <p>Ekspansi "Shadow of the Erdtree" dijadwalkan rilis pada 15 Desember 2023 untuk semua platform: PlayStation 5, PlayStation 4, Xbox Series X/S, Xbox One, dan PC melalui Steam. Harga yang diumumkan adalah $39.99, dengan diskon 15% untuk
+                        pemain yang telah memiliki game dasar Elden Ring. Pre-order akan dibuka mulai 1 November 2023 dengan bonus eksklusif berupa armor set "Shadow Knight" dan senjata legendaris "Moonlight Greatsword".</p>
+
+                    <div class="article-footer">
+                        <h3>Tags:</h3>
+                        <div class="tags-container">
+                            <a href="#" class="tag">Elden Ring</a>
+                            <a href="#" class="tag">FromSoftware</a>
+                            <a href="#" class="tag">Game RPG</a>
+                            <a href="#" class="tag">Shadow of the Erdtree</a>
+                            <a href="#" class="tag">Ekspansi Game</a>
+                            <a href="#" class="tag">Gaming News</a>
+                            <a href="#" class="tag">PlayStation 5</a>
+                            <a href="#" class="tag">Xbox Series X</a>
+                            <a href="#" class="tag">PC Gaming</a>
+                            <a href="#" class="tag">Action RPG</a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Author Widget -->
+                <div class="sidebar-widget">
+                    <div class="author-card">
+                        <div class="author-avatar">RG</div>
+                        <h3 class="author-name">Redaksi Gaming</h3>
+                        <div class="author-role">Editor Utama</div>
+                        <p class="author-bio">Jurnalis gaming dengan pengalaman 10+ tahun. Spesialis dalam genre RPG dan action-adventure. Telah meliput berbagai event gaming internasional.</p>
+                    </div>
+                </div>
+
+                <!-- Trending Widget -->
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">
+                        <i class="fas fa-fire"></i> Trending Now
+                    </h3>
+                    <ul class="trending-list">
+                        <li class="trending-item">
+                            <a href="#" class="trending-link">
+                                <div class="trending-number">1</div>
+                                <div class="trending-content">
+                                    <div class="trending-title">Starfield Review: Game of the Year?</div>
+                                    <div class="trending-meta">
+                                        <span><i class="far fa-clock"></i> 5 jam lalu</span>
+                                        <span><i class="far fa-eye"></i> 8.2k</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="trending-item">
+                            <a href="#" class="trending-link">
+                                <div class="trending-number">2</div>
+                                <div class="trending-content">
+                                    <div class="trending-title">PlayStation 5 Pro Diumumkan 2024</div>
+                                    <div class="trending-meta">
+                                        <span><i class="far fa-clock"></i> 1 hari lalu</span>
+                                        <span><i class="far fa-eye"></i> 12.5k</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="trending-item">
+                            <a href="#" class="trending-link">
+                                <div class="trending-number">3</div>
+                                <div class="trending-content">
+                                    <div class="trending-title">Final Fantasy XVI Rilis di PC</div>
+                                    <div class="trending-meta">
+                                        <span><i class="far fa-clock"></i> 2 hari lalu</span>
+                                        <span><i class="far fa-eye"></i> 9.7k</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="trending-item">
+                            <a href="#" class="trending-link">
+                                <div class="trending-number">4</div>
+                                <div class="trending-content">
+                                    <div class="trending-title">Turnamen Valorant Champions 2023</div>
+                                    <div class="trending-meta">
+                                        <span><i class="far fa-clock"></i> 3 hari lalu</span>
+                                        <span><i class="far fa-eye"></i> 15.3k</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="trending-item">
+                            <a href="#" class="trending-link">
+                                <div class="trending-number">5</div>
+                                <div class="trending-content">
+                                    <div class="trending-title">Nintendo Switch 2: Spesifikasi Bocor</div>
+                                    <div class="trending-meta">
+                                        <span><i class="far fa-clock"></i> 4 hari lalu</span>
+                                        <span><i class="far fa-eye"></i> 11.8k</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Ad Widget -->
+                <div class="sidebar-widget">
+                    <div class="ad-container">
+                        <div class="ad-label">Sponsored</div>
+                        <h4 class="ad-title">Game PC Terbaru 2023</h4>
+                        <p class="ad-desc">Dapatkan diskon hingga 70% untuk game PC terbaru di platform gaming terpercaya.</p>
+                        <button class="ad-button">Lihat Promo</button>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Related Articles -->
+        <section class="related-section animate-on-scroll">
+            <div class="section-header">
+                <h2 class="section-title">Artikel Terkait</h2>
+                <a href="index.html" class="section-link">
+                    <span>Lihat Semua</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="articles-grid">
+                <article class="article-card">
+                    <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Game RPG" class="card-image">
+                    <div class="card-content">
+                        <div class="card-category">REVIEW</div>
+                        <h3 class="card-title">RPG Terbaik 2023: Dari Elden Ring Hingga Final Fantasy XVI</h3>
+                        <p class="card-excerpt">Tinjauan lengkap game RPG terbaik sepanjang tahun 2023 yang wajib dimainkan oleh setiap penggemar genre role-playing.</p>
+                        <div class="card-footer">
+                            <div class="card-meta">
+                                <span><i class="far fa-clock"></i> 1 hari lalu</span>
+                                <span><i class="far fa-comment"></i> 32</span>
+                            </div>
+                            <a href="#" class="card-button">Baca</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="FromSoftware" class="card-image">
+                    <div class="card-content">
+                        <div class="card-category">KARIR</div>
+                        <h3 class="card-title">FromSoftware Buka Lowongan untuk Proyek Baru yang Masih Dirahasiakan</h3>
+                        <p class="card-excerpt">Developer terkenal sedang mencari talenta baru untuk proyek game yang masih dirahasiakan. Apakah ini sekuel Bloodborne?</p>
+                        <div class="card-footer">
+                            <div class="card-meta">
+                                <span><i class="far fa-clock"></i> 3 hari lalu</span>
+                                <span><i class="far fa-comment"></i> 18</span>
+                            </div>
+                            <a href="#" class="card-button">Baca</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gaming Event" class="card-image">
+                    <div class="card-content">
+                        <div class="card-category">EVENT</div>
+                        <h3 class="card-title">Indonesia Game Festival 2023: Event Gaming Terbesar Akan Hadir di Jakarta</h3>
+                        <p class="card-excerpt">Persiapan event gaming terbesar di Indonesia yang akan menampilkan game-game terbaru, turnamen, dan meetup developer.</p>
+                        <div class="card-footer">
+                            <div class="card-meta">
+                                <span><i class="far fa-clock"></i> 5 hari lalu</span>
+                                <span><i class="far fa-comment"></i> 41</span>
+                            </div>
+                            <a href="#" class="card-button">Baca</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Comments Section -->
+        <section class="comments-section animate-on-scroll">
+            <div class="comments-header">
+                <h2 class="comments-title">Diskusi Pembaca</h2>
+                <div class="comments-count">45 Komentar</div>
+            </div>
+
+            <!-- Comment Form -->
+            <div class="comment-form-container">
+                <h3 class="comment-form-title">
+                    <i class="fas fa-edit"></i> Tambahkan Komentar
+                </h3>
+                <form id="commentForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="name">Nama Lengkap *</label>
+                            <input type="text" id="name" class="form-control" placeholder="Masukkan nama Anda" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email *</label>
+                            <input type="email" id="email" class="form-control" placeholder="email@contoh.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="comment">Komentar Anda *</label>
+                        <textarea id="comment" class="form-control" placeholder="Tulis komentar Anda di sini..." rows="6" required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">
+                        <i class="fas fa-paper-plane"></i>
+                        Kirim Komentar
+                    </button>
+                </form>
+            </div>
+
+            <!-- Comments List -->
+            <div class="comments-list">
+                <!-- Comment 1 -->
+                <div class="comment">
+                    <div class="comment-header">
+                        <div class="comment-author">
+                            <div class="author-avatar-small">TH</div>
+                            <div class="author-info">
+                                <div class="author-name">TarnishedHero</div>
+                                <div class="author-badge">Member Elite</div>
+                            </div>
+                        </div>
+                        <div class="comment-time">
+                            <i class="far fa-clock"></i> 2 jam yang lalu
+                        </div>
+                    </div>
+                    <div class="comment-body">
+                        Akhirnya! Sudah menunggu ekspansi ini sejak pertama kali menyelesaikan game. FromSoftware tidak pernah mengecewakan. Semoga ada boss yang lebih sulit dari Malenia! Saya sudah siap untuk menderita lagi dengan senyuman. Juga harapannya ada area yang lebih
+                        vertikal dan kompleks seperti Haligtree.
+                    </div>
+                    <div class="comment-actions">
+                        <button class="action-btn like-btn">
+                            <i class="far fa-thumbs-up"></i>
+                            <span>24</span>
+                        </button>
+                        <button class="action-btn dislike-btn">
+                            <i class="far fa-thumbs-down"></i>
+                            <span>2</span>
+                        </button>
+                        <button class="action-btn reply-btn">
+                            <i class="fas fa-reply"></i>
+                            <span>Balas</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Comment 2 -->
+                <div class="comment">
+                    <div class="comment-header">
+                        <div class="comment-author">
+                            <div class="author-avatar-small">GS</div>
+                            <div class="author-info">
+                                <div class="author-name">GraceSeeker</div>
+                                <div class="author-badge">Member Aktif</div>
+                            </div>
+                        </div>
+                        <div class="comment-time">
+                            <i class="far fa-clock"></i> 3 jam yang lalu
+                        </div>
+                    </div>
+                    <div class="comment-body">
+                        Harganya cukup terjangkau untuk konten 10+ jam. Apakah akan ada ending baru? Sangat penasaran dengan lore tambahan tentang Erdtree dan Marika. Juga semoga ada lebih banyak quest tentang Ranni, karakter favorit saya! FromSoftware selalu berhasil dengan
+                        storytelling environmental mereka.
+                    </div>
+                    <div class="comment-actions">
+                        <button class="action-btn like-btn">
+                            <i class="far fa-thumbs-up"></i>
+                            <span>18</span>
+                        </button>
+                        <button class="action-btn dislike-btn">
+                            <i class="far fa-thumbs-down"></i>
+                            <span>1</span>
+                        </button>
+                        <button class="action-btn reply-btn">
+                            <i class="fas fa-reply"></i>
+                            <span>Balas</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Comment 3 -->
+                <div class="comment">
+                    <div class="comment-header">
+                        <div class="comment-author">
+                            <div class="author-avatar-small">RS</div>
+                            <div class="author-info">
+                                <div class="author-name">RanniSimp</div>
+                                <div class="author-badge">Member Baru</div>
+                            </div>
+                        </div>
+                        <div class="comment-time">
+                            <i class="far fa-clock"></i> 4 jam yang lalu
+                        </div>
+                    </div>
+                    <div class="comment-body">
+                        Saya berharap ada lebih banyak konten tentang Ranni dan questlinenya. Karakter terbaik di Elden Ring menurut saya. FromSoftware tolong tambahkan lebih banyak dialog, cutscene, dan lore untuknya! Juga armor dan senjata yang berkaitan dengan bulan. Mungkin
+                        ada quest khusus untuk mendapatkan ending alternatif dengan Ranni?
+                    </div>
+                    <div class="comment-actions">
+                        <button class="action-btn like-btn liked">
+                            <i class="fas fa-thumbs-up"></i>
+                            <span>42</span>
+                        </button>
+                        <button class="action-btn dislike-btn">
+                            <i class="far fa-thumbs-down"></i>
+                            <span>0</span>
+                        </button>
+                        <button class="action-btn reply-btn">
+                            <i class="fas fa-reply"></i>
+                            <span>Balas</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Ultra Premium -->
+    <footer class="ultimate-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-logo-column">
+                    <div class="footer-logo">
+                        <div class="footer-logo-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <div class="footer-logo-text">HOT NEWS</div>
+                    </div>
+                    <p class="footer-description">
+                        Portal berita gaming terupdate di Indonesia. Menyajikan informasi terbaru seputar game, review, event, dan industri gaming secara lengkap dan terpercaya sejak 2015.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="footer-social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="footer-social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="footer-social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="footer-social-link">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="footer-social-link">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="footer-title">Menu Cepat</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link-item">
+                            <a href="index.html" class="footer-link">
+                                <i class="fas fa-chevron-right"></i> Beranda
+                            </a>
+                        </li>
+                        <li class="footer-link-item">
+                            <a href="#" class="footer-link">
+                                <i class="fas fa-chevron-right"></i> Berita Gaming
+                            </a>
+                        </li>
+                        <li class="footer-link-item">
+                            <a href="#" class="footer-link">
+                                <i class="fas fa-chevron-right"></i> Review Game
+                            </a>
+                        </li>
+                        <li class="footer-link-item">
+                            <a href="#" class="footer-link">
+                                <i class="fas fa-chevron-right"></i> Video Gameplay
+                            </a>
+                        </li>
+                        <li class="footer-link-item">
+                            <a href="#" class="footer-link">
+                                <i class="fas fa-chevron-right"></i> Event & Turnamen
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="footer-title">Kategori</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link-item">
+                            <a href="#" class="footer-link">
+                                <i class="fas fa-chevron-right"></i> RPG
+                            </a>
+                        </li>
+                        <li class="footer-link-item">
+                            <a href="#" class="footer-link">
+                                <i class="fas fa-chevron-right"></i> FPS & Battle Royale
+                            </a>
+                        </li>
+                        <li class="footer-link-item">
+                            <a href="#" class="footer-link">
+                                <i class="fas fa-chevron-right"></i> Adventure
+                            </a>
+                        </li>
+                        <li class="footer-link-item">
+                            <a href="#" class="footer-link">
+                                <i class="fas fa-chevron-right"></i> Strategy & Simulation
+                            </a>
+                        </li>
+                        <li class="footer-link-item">
+                            <a href="#" class="footer-link">
+                                <i class="fas fa-chevron-right"></i> Indie Games
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="footer-title">Newsletter</h3>
+                    <div class="footer-newsletter">
+                        <p class="newsletter-title">Dapatkan Berita Gaming Terbaru</p>
+                        <form class="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Email Anda" required>
+                            <button type="submit" class="newsletter-button">Subscribe</button>
+                        </form>
+                        <p style="color: var(--gray); font-size: 13px; margin-top: 15px;">Dapatkan update langsung ke inbox Anda.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2025 Hot News Gaming Portal. Semua hak dilindungi.
+                </div>
+                <div class="footer-bottom-links">
+                    <a href="#" class="footer-bottom-link">Kebijakan Privasi</a>
+                    <a href="#" class="footer-bottom-link">Syarat Layanan</a>
+                    <a href="#" class="footer-bottom-link">Kontak Kami</a>
+                    <a href="#" class="footer-bottom-link">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-actions">
+        <button class="floating-btn home" onclick="window.location.href='index.html'">
+            <i class="fas fa-home"></i>
+            <span class="floating-tooltip">Kembali ke Beranda</span>
+        </button>
+        <button class="floating-btn comment" onclick="document.getElementById('comment').focus()">
+            <i class="fas fa-comment"></i>
+            <span class="floating-tooltip">Tulis Komentar</span>
+        </button>
+        <button class="floating-btn top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+            <i class="fas fa-arrow-up"></i>
+            <span class="floating-tooltip">Kembali ke Atas</span>
+        </button>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <script>
+        // Initialize Particles.js
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof particlesJS !== 'undefined') {
+                particlesJS('particles-js', {
+                    particles: {
+                        number: {
+                            value: 80,
+                            density: {
+                                enable: true,
+                                value_area: 800
+                            }
+                        },
+                        color: {
+                            value: "#FF6B35"
+                        },
+                        shape: {
+                            type: "circle"
+                        },
+                        opacity: {
+                            value: 0.5,
+                            random: true
+                        },
+                        size: {
+                            value: 3,
+                            random: true
+                        },
+                        line_linked: {
+                            enable: true,
+                            distance: 150,
+                            color: "#FF6B35",
+                            opacity: 0.2,
+                            width: 1
+                        },
+                        move: {
+                            enable: true,
+                            speed: 2,
+                            direction: "none",
+                            random: true,
+                            straight: false,
+                            out_mode: "out",
+                            bounce: false
+                        }
+                    },
+                    interactivity: {
+                        detect_on: "canvas",
+                        events: {
+                            onhover: {
+                                enable: true,
+                                mode: "repulse"
+                            },
+                            onclick: {
+                                enable: true,
+                                mode: "push"
+                            },
+                            resize: true
+                        }
+                    }
+                });
+            }
+
+            // Header scroll effect
+            const header = document.querySelector('.ultimate-header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // Animation on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements with animate-on-scroll class
+            document.querySelectorAll('.animate-on-scroll').forEach(element => {
+                observer.observe(element);
+            });
+
+            // Comment form submission
+            const commentForm = document.getElementById('commentForm');
+            if (commentForm) {
+                commentForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    const name = document.getElementById('name').value;
+                    const comment = document.getElementById('comment').value;
+
+                    if (name && comment) {
+                        // Create new comment element
+                        const commentsList = document.querySelector('.comments-list');
+                        const newComment = document.createElement('div');
+                        newComment.className = 'comment';
+                        newComment.innerHTML = `
+                            <div class="comment-header">
+                                <div class="comment-author">
+                                    <div class="author-avatar-small">${name.charAt(0).toUpperCase()}</div>
+                                    <div class="author-info">
+                                        <div class="author-name">${name}</div>
+                                        <div class="author-badge">Member Baru</div>
+                                    </div>
+                                </div>
+                                <div class="comment-time">
+                                    <i class="far fa-clock"></i>
+                                    Baru saja
+                                </div>
+                            </div>
+                            <div class="comment-body">${comment}</div>
+                            <div class="comment-actions">
+                                <button class="action-btn like-btn">
+                                    <i class="far fa-thumbs-up"></i>
+                                    <span>0</span>
+                                </button>
+                                <button class="action-btn dislike-btn">
+                                    <i class="far fa-thumbs-down"></i>
+                                    <span>0</span>
+                                </button>
+                                <button class="action-btn reply-btn">
+                                    <i class="fas fa-reply"></i>
+                                    <span>Balas</span>
+                                </button>
+                            </div>
+                        `;
+
+                        // Add to top of comments list
+                        commentsList.insertBefore(newComment, commentsList.firstChild);
+
+                        // Update comment count
+                        const commentCount = document.querySelector('.comments-count');
+                        const currentCount = parseInt(commentCount.textContent);
+                        commentCount.textContent = (currentCount + 1) + ' Komentar';
+
+                        // Reset form
+                        commentForm.reset();
+
+                        // Show notification
+                        showNotification('Komentar Anda berhasil ditambahkan!', 'success');
+
+                        // Scroll to new comment
+                        newComment.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'nearest'
+                        });
+                    }
+                });
+            }
+
+            // Like/Dislike functionality
+            document.addEventListener('click', function(e) {
+                // Like button
+                if (e.target.closest('.like-btn')) {
+                    const btn = e.target.closest('.like-btn');
+                    const icon = btn.querySelector('i');
+                    const count = btn.querySelector('span');
+                    let currentCount = parseInt(count.textContent);
+
+                    if (!btn.classList.contains('liked')) {
+                        count.textContent = currentCount + 1;
+                        btn.classList.add('liked');
+                        icon.classList.remove('far');
+                        icon.classList.add('fas');
+                        showNotification('Anda menyukai komentar ini!', 'info');
+                    } else {
+                        count.textContent = currentCount - 1;
+                        btn.classList.remove('liked');
+                        icon.classList.remove('fas');
+                        icon.classList.add('far');
+                    }
+                }
+
+                // Dislike button
+                if (e.target.closest('.dislike-btn')) {
+                    const btn = e.target.closest('.dislike-btn');
+                    const icon = btn.querySelector('i');
+                    const count = btn.querySelector('span');
+                    let currentCount = parseInt(count.textContent);
+
+                    if (!btn.classList.contains('disliked')) {
+                        count.textContent = currentCount + 1;
+                        btn.classList.add('disliked');
+                        icon.classList.remove('far');
+                        icon.classList.add('fas');
+                        showNotification('Anda tidak menyukai komentar ini', 'info');
+                    } else {
+                        count.textContent = currentCount - 1;
+                        btn.classList.remove('disliked');
+                        icon.classList.remove('fas');
+                        icon.classList.add('far');
+                    }
+                }
+
+                // Reply button
+                if (e.target.closest('.reply-btn')) {
+                    const commentBody = e.target.closest('.comment').querySelector('.comment-body').textContent;
+                    const author = e.target.closest('.comment').querySelector('.author-name').textContent;
+                    document.getElementById('comment').value = `@${author}: ${commentBody.substring(0, 50)}... `;
+                    document.getElementById('comment').focus();
+                    showNotification(`Membalas komentar dari ${author}`, 'info');
+                }
+            });
+
+            // Copy link functionality
+            const copyLinkBtn = document.getElementById('copy-link');
+            if (copyLinkBtn) {
+                copyLinkBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const url = window.location.href;
+                    navigator.clipboard.writeText(url).then(function() {
+                        showNotification('Tautan berhasil disalin!', 'success');
+                        // Change icon temporarily
+                        const icon = copyLinkBtn.querySelector('i');
+                        icon.classList.remove('fa-link');
+                        icon.classList.add('fa-check');
+                        setTimeout(() => {
+                            icon.classList.remove('fa-check');
+                            icon.classList.add('fa-link');
+                        }, 2000);
+                    });
+                });
+            }
+
+            // Search button
+            document.querySelector('.search-btn').addEventListener('click', function() {
+                showNotification('Fitur pencarian akan segera hadir!', 'info');
+            });
+
+            // Subscribe button
+            document.querySelector('.subscribe-btn').addEventListener('click', function() {
+                showNotification('Terima kasih telah berlangganan!', 'success');
+            });
+
+            // Newsletter form
+            const newsletterForm = document.querySelector('.newsletter-form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = this.querySelector('.newsletter-input').value;
+                    if (email) {
+                        showNotification('Terima kasih telah berlangganan newsletter kami!', 'success');
+                        this.reset();
+                    }
+                });
+            }
+
+            // Ad button
+            document.querySelector('.ad-button').addEventListener('click', function() {
+                showNotification('Mengarahkan ke halaman promo...', 'info');
+            });
+
+            // Article card buttons
+            document.querySelectorAll('.card-button').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    showNotification('Membuka artikel terkait...', 'info');
+                });
+            });
+
+            // Notification function
+            function showNotification(message, type) {
+                // Create notification element
+                const notification = document.createElement('div');
+                notification.className = 'notification';
+                notification.style.cssText = `
+                    position: fixed;
+                    top: 100px;
+                    right: 30px;
+                    background: ${type === 'success' ? 'linear-gradient(135deg, #28A745, #218838)' : 
+                                type === 'info' ? 'linear-gradient(135deg, var(--primary), var(--primary-dark))' :
+                                'linear-gradient(135deg, #DC3545, #C82333)'};
+                    color: white;
+                    padding: 18px 28px;
+                    border-radius: var(--radius-md);
+                    box-shadow: var(--shadow-lg);
+                    z-index: 10000;
+                    font-weight: 500;
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                    animation: slideInRight 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+                    max-width: 400px;
+                `;
+
+                // Icon based on type
+                const icon = type === 'success' ? 'fa-check-circle' :
+                    type === 'info' ? 'fa-info-circle' : 'fa-exclamation-circle';
+
+                notification.innerHTML = `
+                    <i class="fas ${icon}" style="font-size: 22px;"></i>
+                    <span>${message}</span>
+                `;
+
+                // Add animation style
+                const style = document.createElement('style');
+                style.textContent = `
+                    @keyframes slideInRight {
+                        from { transform: translateX(100%); opacity: 0; }
+                        to { transform: translateX(0); opacity: 1; }
+                    }
+                    @keyframes slideOutRight {
+                        from { transform: translateX(0); opacity: 1; }
+                        to { transform: translateX(100%); opacity: 0; }
+                    }
+                `;
+                document.head.appendChild(style);
+
+                document.body.appendChild(notification);
+
+                // Remove notification after 4 seconds
+                setTimeout(() => {
+                    notification.style.animation = 'slideOutRight 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards';
+                    setTimeout(() => {
+                        if (notification.parentNode) {
+                            document.body.removeChild(notification);
+                        }
+                    }, 400);
+                }, 4000);
+            }
+
+            // Initialize tooltips for social buttons on hover
+            document.querySelectorAll('.social-button').forEach(btn => {
+                btn.addEventListener('mouseenter', function() {
+                    const tooltip = this.querySelector('.social-tooltip');
+                    if (tooltip) {
+                        tooltip.style.opacity = '1';
+                        tooltip.style.visibility = 'visible';
+                        tooltip.style.left = '80px';
+                    }
+                });
+
+                btn.addEventListener('mouseleave', function() {
+                    const tooltip = this.querySelector('.social-tooltip');
+                    if (tooltip) {
+                        tooltip.style.opacity = '0';
+                        tooltip.style.visibility = 'hidden';
+                        tooltip.style.left = '70px';
+                    }
+                });
+            });
+
+            // Initialize tooltips for floating buttons
+            document.querySelectorAll('.floating-btn').forEach(btn => {
+                btn.addEventListener('mouseenter', function() {
+                    const tooltip = this.querySelector('.floating-tooltip');
+                    if (tooltip) {
+                        tooltip.style.opacity = '1';
+                        tooltip.style.visibility = 'visible';
+                        tooltip.style.right = '85px';
+                    }
+                });
+
+                btn.addEventListener('mouseleave', function() {
+                    const tooltip = this.querySelector('.floating-tooltip');
+                    if (tooltip) {
+                        tooltip.style.opacity = '0';
+                        tooltip.style.visibility = 'hidden';
+                        tooltip.style.right = '75px';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

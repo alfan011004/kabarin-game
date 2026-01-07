@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Hero Baru - Mobile Legends: Bang Bang</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+         :root {
+            --primary: #9d7aff;
+            --primary-dark: #6a41c2;
+            --secondary: #ff4655;
+            --accent: #00ffcc;
+            --dark-bg: #0a0e1a;
+            --darker-bg: #070a15;
+            --card-bg: rgba(20, 25, 45, 0.9);
+            --text-light: #ffffff;
+            --text-gray: #b0b8d0;
+            --gradient-primary: linear-gradient(135deg, #9d7aff 0%, #6a41c2 100%);
+            --gradient-secondary: linear-gradient(135deg, #ff4655 0%, #ff6b6b 100%);
+            --gradient-dark: linear-gradient(135deg, #1a1f38 0%, #0f1425 100%);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            --glow: 0 0 20px rgba(157, 122, 255, 0.4);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background-image: radial-gradient(circle at 10% 20%, rgba(157, 122, 255, 0.1) 0%, transparent 20%), radial-gradient(circle at 90% 80%, rgba(255, 70, 85, 0.1) 0%, transparent 20%), radial-gradient(circle at 50% 50%, rgba(0, 255, 204, 0.05) 0%, transparent 30%);
+            min-height: 100vh;
+        }
+        
+        .particles {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .particle {
+            position: absolute;
+            background: var(--primary);
+            border-radius: 50%;
+            opacity: 0.2;
+            animation: float 15s infinite linear;
+        }
+        
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Header Styles */
+        
+        header {
+            background: var(--gradient-dark);
+            padding: 20px 0;
+            border-bottom: 2px solid rgba(157, 122, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .back-home-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(20, 25, 45, 0.8);
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            backdrop-filter: blur(10px);
+        }
+        
+        .back-home-btn:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: var(--glow);
+            border-color: var(--primary);
+        }
+        
+        .header-title {
+            text-align: center;
+            flex-grow: 1;
+        }
+        
+        .header-title h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+        
+        .header-title p {
+            color: var(--text-gray);
+            font-size: 16px;
+        }
+        
+        .mlbb-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            color: var(--text-light);
+            font-size: 18px;
+        }
+        /* Hero Banner */
+        
+        .hero-section {
+            margin: 40px 0;
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .hero-banner {
+            height: 450px;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('https://i.pinimg.com/1200x/9a/93/b4/9a93b44bc02e55147604456799c4a684.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+            padding: 40px;
+            position: relative;
+        }
+        
+        .hero-info {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 60px;
+            font-weight: 800;
+            color: var(--text-light);
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+        
+        .hero-role {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gradient-primary);
+            color: var(--text-light);
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        /* Main Content */
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 40px;
+            margin: 50px 0;
+        }
+        
+        @media (max-width: 992px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* Article Section */
+        
+        .article-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .article-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+        
+        .info-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(157, 122, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow), var(--glow);
+            border-color: var(--primary);
+        }
+        
+        .info-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .info-card p {
+            color: var(--text-gray);
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        
+        .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        /* Abilities Grid */
+        
+        .abilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .ability-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(157, 122, 255, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ability-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow), 0 0 30px rgba(157, 122, 255, 0.3);
+            border-color: var(--primary);
+        }
+        
+        .ability-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .ability-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--text-light);
+        }
+        
+        .ability-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            color: var(--text-light);
+            font-weight: 700;
+        }
+        
+        .ability-type {
+            color: var(--text-gray);
+            font-size: 14px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 3px 10px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+        
+        .ability-desc {
+            color: var(--text-gray);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        /* Sidebar */
+        
+        .sidebar {
+            position: sticky;
+            top: 30px;
+            height: fit-content;
+        }
+        
+        .sidebar-section {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(157, 122, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        
+        .sidebar-section h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            color: var(--primary);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        /* Stats */
+        
+        .stat-item {
+            margin-bottom: 20px;
+        }
+        
+        .stat-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        
+        .stat-label {
+            color: var(--text-light);
+            font-weight: 500;
+        }
+        
+        .stat-value {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        .stat-bar {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .stat-fill {
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: 4px;
+            transition: width 1s ease;
+        }
+        /* Release Info */
+        
+        .release-info {
+            background: var(--gradient-dark);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            border: 2px solid var(--primary);
+        }
+        
+        .release-info h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+        
+        .release-date {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--accent);
+            margin: 10px 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+        /* Footer */
+        
+        footer {
+            background: var(--gradient-dark);
+            padding: 50px 0 30px;
+            margin-top: 60px;
+            border-top: 2px solid rgba(157, 122, 255, 0.3);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .footer-section p,
+        .footer-section a {
+            color: var(--text-gray);
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: var(--primary);
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-size: 24px;
+            text-decoration: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+            z-index: 1000;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--glow);
+        }
+        /* Animation classes */
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%,
+            100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+        /* Responsive */
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            .hero-name {
+                font-size: 40px;
+            }
+            .hero-banner {
+                height: 350px;
+                padding: 30px 20px;
+            }
+            .article-section h2 {
+                font-size: 28px;
+            }
+            .info-card,
+            .sidebar-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background Particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="back-home-btn">
+                    <i class="fas fa-chevron-left"></i>
+                    <span>Kembali ke Beranda</span>
+                </a>
+
+                <div class="header-title">
+                    <h1>MOBILE LEGENDS NEWS</h1>
+                    <p>Update Terbaru & Informasi Lengkap</p>
+                </div>
+
+                <div class="mlbb-logo">
+                    <i class="fas fa-crown"></i>
+                    <span>MLBB</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero-section fade-in">
+            <div class="hero-banner">
+                <div class="hero-info">
+                    <h1 class="hero-name">VALERIUS</h1>
+                    <div class="hero-role">
+                        <i class="fas fa-clock"></i>
+                        <span>The Chronomancer • Mage/Support</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Grid -->
+        <div class="main-content">
+            <!-- Article Section -->
+            <div class="article-section">
+                <!-- Introduction -->
+                <section class="fade-in">
+                    <h2><i class="fas fa-star"></i> HERO BARU DENGAN ABILITY UNIK</h2>
+                    <div class="info-card">
+                        <h3><i class="fas fa-info-circle"></i> Pengenalan Hero Baru</h3>
+                        <p>Moonton resmi memperkenalkan hero baru dalam update terbaru <span class="highlight">Mobile Legends: Bang Bang</span>. Hero dengan nama <span class="highlight">Valerius</span> ini hadir dengan kemampuan unik yang berfokus pada manipulasi
+                            waktu, menjadikannya hero pertama dalam game yang dapat memperlambat, mempercepat, bahkan mengulang waktu untuk keuntungan tim.</p>
+                        <p>Valerius adalah seorang Chronomancer yang berasal dari Celestial Realm. Dengan kekuatan kontrol waktu yang dimilikinya, ia dapat mengubah jalannya pertempuran dengan kemampuan crowd control dan utility yang belum pernah ada sebelumnya.</p>
+                        <p>Desain hero ini terinspirasi dari konsep waktu dan ruang, dengan visual effect yang memukau dan gameplay yang menantang bagi pemain yang menyukai strategi kompleks.</p>
+                    </div>
+                </section>
+
+                <!-- Abilities -->
+                <section class="fade-in">
+                    <h2><i class="fas fa-bolt"></i> ABILITY & SKILL SET</h2>
+                    <div class="abilities-grid">
+                        <!-- Skill 1 -->
+                        <div class="ability-card">
+                            <div class="ability-header">
+                                <div class="ability-icon">1</div>
+                                <div>
+                                    <div class="ability-title">Time Warp</div>
+                                    <span class="ability-type">SKILL 1 • AREA CONTROL</span>
+                                </div>
+                            </div>
+                            <p class="ability-desc">Menciptakan medan temporal yang memperlambat musuh sebesar 40% dan mengurangi armor magic mereka. Jika musuh berada dalam area terlalu lama, mereka akan mengalami stun selama 1.2 detik.</p>
+                        </div>
+
+                        <!-- Skill 2 -->
+                        <div class="ability-card">
+                            <div class="ability-header">
+                                <div class="ability-icon">2</div>
+                                <div>
+                                    <div class="ability-title">Temporal Shift</div>
+                                    <span class="ability-type">SKILL 2 • BUFF/DEBUFF</span>
+                                </div>
+                            </div>
+                            <p class="ability-desc">Memanipulasi waktu di area target, mempercepat sekutu sebesar 30% dan memberikan shield, sementara musuh diperlambat 25%. Efek ini berlangsung selama 3 detik.</p>
+                        </div>
+
+                        <!-- Ultimate -->
+                        <div class="ability-card">
+                            <div class="ability-header">
+                                <div class="ability-icon">ULT</div>
+                                <div>
+                                    <div class="ability-title">Chrono Reversal</div>
+                                    <span class="ability-type">ULTIMATE • GAME CHANGER</span>
+                                </div>
+                            </div>
+                            <p class="ability-desc">Mengembalikan status hero (HP, mana, cooldown) ke kondisi 4 detik sebelumnya. Dapat digunakan pada diri sendiri atau sekutu. Cooldown: 120 detik.</p>
+                        </div>
+
+                        <!-- Passive -->
+                        <div class="ability-card">
+                            <div class="ability-header">
+                                <div class="ability-icon">P</div>
+                                <div>
+                                    <div class="ability-title">Timekeeper's Essence</div>
+                                    <span class="ability-type">PASSIVE • ENHANCEMENT</span>
+                                </div>
+                            </div>
+                            <p class="ability-desc">Setiap kali menggunakan skill, mengumpulkan "Chrono Energy". Setelah terkumpul penuh, skill berikutnya akan memiliki efek tambahan dan mengurangi cooldown semua skill sebesar 20%.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Strategy -->
+                <section class="fade-in">
+                    <h2><i class="fas fa-chess"></i> STRATEGI & ROLE</h2>
+                    <div class="info-card">
+                        <h3><i class="fas fa-trophy"></i> Strategi Penggunaan</h3>
+                        <p>Valerius dirancang untuk menjadi <span class="highlight">mage support</span> yang dapat memberikan dampak besar dalam team fight. Dengan kemampuan kontrol area dan utility yang dimilikinya, ia cocok untuk mengatur tempo pertempuran.</p>
+                        <p><span class="highlight">Positioning:</span> Disarankan untuk memainkan Valerius di <span class="highlight">midlane atau sebagai roamer</span>. Kombinasi skillnya sangat efektif untuk ganking awal game dan menjadi game changer di
+                            late game dengan ultimate yang dapat menyelamatkan core dari kematian.</p>
+                        <p><span class="highlight">Item Build:</span> Fokus pada item cooldown reduction dan magic penetration. Clock of Destiny dan Lightning Truncheon adalah core items yang sangat direkomendasikan.</p>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Stats -->
+                <div class="sidebar-section fade-in">
+                    <h3><i class="fas fa-chart-bar"></i> STATISTIK HERO</h3>
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <div class="stat-header">
+                                <span class="stat-label">Difficulty</span>
+                                <span class="stat-value">Tinggi</span>
+                            </div>
+                            <div class="stat-bar">
+                                <div class="stat-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-header">
+                                <span class="stat-label">Damage</span>
+                                <span class="stat-value">Menengah</span>
+                            </div>
+                            <div class="stat-bar">
+                                <div class="stat-fill" style="width: 60%"></div>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-header">
+                                <span class="stat-label">Durability</span>
+                                <span class="stat-value">Rendah</span>
+                            </div>
+                            <div class="stat-bar">
+                                <div class="stat-fill" style="width: 35%"></div>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-header">
+                                <span class="stat-label">Utility</span>
+                                <span class="stat-value">Sangat Tinggi</span>
+                            </div>
+                            <div class="stat-bar">
+                                <div class="stat-fill" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-header">
+                                <span class="stat-label">Crowd Control</span>
+                                <span class="stat-value">Tinggi</span>
+                            </div>
+                            <div class="stat-bar">
+                                <div class="stat-fill" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Counter & Synergy -->
+                <div class="sidebar-section fade-in">
+                    <h3><i class="fas fa-users"></i> COUNTER & SYNERGY</h3>
+                    <div class="info-card" style="padding: 0; border: none; background: transparent;">
+                        <h4 style="color: var(--secondary); margin-bottom: 15px;">Counter Terbaik</h4>
+                        <p style="margin-bottom: 20px;">Hero dengan burst damage tinggi seperti <span class="highlight">Karina</span> atau <span class="highlight">Saber</span> dapat dengan cepat mengeliminasi Valerius sebelum ia menggunakan skill.</p>
+
+                        <h4 style="color: var(--accent); margin-bottom: 15px;">Synergy Terbaik</h4>
+                        <p>Hero hyper carry seperti <span class="highlight">Claude</span> atau <span class="highlight">Moskov</span> yang dapat memanfaatkan buff dari Temporal Shift untuk menghasilkan damage maksimal.</p>
+                    </div>
+                </div>
+
+                <!-- Release Info -->
+                <div class="release-info fade-in">
+                    <h4><i class="fas fa-calendar-alt"></i> TANGGAL RILIS</h4>
+                    <div class="release-date pulse">-</div>
+                    <p>Patch 1.7.48</p>
+                    <p style="margin-top: 15px; color: var(--text-gray);">
+                        <i class="fas fa-download"></i> Update tersedia di App Store & Google Play
+                    </p>
+                </div>
+
+                <!-- Quick Navigation -->
+                <div class="sidebar-section fade-in">
+                    <h3><i class="fas fa-link"></i> NAVIGASI CEPAT</h3>
+                    <a href="index.html" class="back-home-btn" style="justify-content: center; margin-bottom: 15px;">
+                        <i class="fas fa-home"></i>
+                        <span>Kembali ke Beranda</span>
+                    </a>
+                    <a href="https://mediaindonesia.com/tag/mobile-legends-bang-bang" class="back-home-btn" style="justify-content: center; background: rgba(255, 70, 85, 0.1);">
+                        <i class="fas fa-newspaper"></i>
+                        <span>Lihat Berita Lainnya</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>MLBB NEWS</h4>
+                    <p>Portal berita terpercaya untuk Mobile Legends: Bang Bang. Menyajikan update terbaru, strategi, dan informasi seputar game.</p>
+                    <p>© 2025 MLBB News. All rights reserved.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>NAVIGASI</h4>
+                    <a href="index.html"><i class="fas fa-home"></i> Beranda</a>
+                    <a href="https://www.ligagame.tv/esports/mlbb/"><i class="fas fa-newspaper"></i> Berita Terbaru</a>
+                    <a href="https://mobile-legends.fandom.com/wiki/Category:Hero_guide"><i class="fas fa-gamepad"></i> Hero Guide</a>
+                    <a href="https://esportswave.id/2025/10/30/moonton-umumkan-format-jadwal-dan-tiket-m7-world-championship-2026-di-jakarta/"><i class="fas fa-trophy"></i> Tournament</a>
+                </div>
+
+                <div class="footer-section">
+                    <h4>KONTAK</h4>
+                    <a href="https://mobile-legends.net/contact-us/"><i class="fas fa-envelope"></i> contact@mlbbnews.id</p>
+                    <p><i class="fab fa-discord"></i> Discord Community</p>
+                    <a href="https://www.youtube.com/@MobileLegends5v5MOBA"><i class="fab fa-youtube"></i> YouTube Channel</a>
+                </div>
+
+                <div class="footer-section">
+                    <h4>DOWNLOAD</h4>
+                    <a href="https://play.google.com/store/search?q=mobile+legend&c=apps"><i class="fab fa-google-play"></i> Google Play</a>
+                    <a href="https://apps.apple.com/us/app/mobile-legends-bang-bang-us/id6741568655"><i class="fab fa-app-store"></i> App Store</a>
+                    <a href="https://play.google.com/pc-store/games/details?id=com.mobile.legends&hl=en"><i class="fas fa-desktop"></i> PC Version</a>
+                </div>
+            </div>
+
+            <div style="text-align: center; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1);">
+                <a href="index.html" class="back-home-btn" style="display: inline-flex;">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Kembali ke Halaman Utama</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Create background particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 30;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+
+                // Random properties
+                const size = Math.random() * 10 + 5;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const color = Math.random() > 0.5 ? 'var(--primary)' : 'var(--secondary)';
+                const delay = Math.random() * 20;
+                const duration = Math.random() * 10 + 15;
+
+                // Apply styles
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${posX}%`;
+                particle.style.top = `${posY}%`;
+                particle.style.background = color;
+                particle.style.animationDelay = `${delay}s`;
+                particle.style.animationDuration = `${duration}s`;
+
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Fade in animation on scroll
+        function fadeInOnScroll() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // Back to top button
+        function handleBackToTop() {
+            const backToTopBtn = document.getElementById('backToTop');
+
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('show');
+                } else {
+                    backToTopBtn.classList.remove('show');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // Animate stat bars on scroll
+        function animateStats() {
+            const statBars = document.querySelectorAll('.stat-fill');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const bar = entry.target;
+                        const width = bar.style.width;
+                        bar.style.width = '0%';
+
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 300);
+
+                        observer.unobserve(bar);
+                    }
+                });
+            }, {
+                threshold: 0.5
+            });
+
+            statBars.forEach(bar => observer.observe(bar));
+        }
+
+        // Initialize everything when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            handleBackToTop();
+            animateStats();
+
+            // Initial fade in check
+            fadeInOnScroll();
+
+            // Check on scroll
+            window.addEventListener('scroll', fadeInOnScroll);
+
+            // Add hover effects to cards
+            const cards = document.querySelectorAll('.info-card, .ability-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-10px)';
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0)';
+                });
+            });
+
+            // Navigation buttons
+            const backButtons = document.querySelectorAll('.back-home-btn');
+            backButtons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    if (btn.getAttribute('href') === 'index.html') {
+                        e.preventDefault();
+                        // Add transition effect before navigating
+                        document.body.style.opacity = '0';
+                        document.body.style.transition = 'opacity 0.3s';
+
+                        setTimeout(() => {
+                            window.location.href = 'index.html';
+                        }, 300);
+                    }
+                });
+            });
+
+            // Add click effect to buttons
+            const buttons = document.querySelectorAll('a, .ability-card');
+            buttons.forEach(button => {
+                button.addEventListener('mousedown', () => {
+                    button.style.transform = 'scale(0.95)';
+                });
+
+                button.addEventListener('mouseup', () => {
+                    button.style.transform = '';
+                });
+
+                button.addEventListener('mouseleave', () => {
+                    button.style.transform = '';
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

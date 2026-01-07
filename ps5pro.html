@@ -1,0 +1,1732 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayStation 5 Pro - Detail Berita | GameTech News</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+         :root {
+            --primary: #003087;
+            --primary-dark: #001f5c;
+            --primary-light: #0072ce;
+            --secondary: #ffcc00;
+            --secondary-dark: #e6b800;
+            --accent: #ff375f;
+            --dark: #121212;
+            --dark-light: #1e1e1e;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --gray-light: #adb5bd;
+            --success: #28a745;
+            --border-radius: 12px;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            --box-shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.25);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark);
+            color: white;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        /* Header & Navigation */
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--secondary);
+        }
+        
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            background: linear-gradient(135deg, var(--secondary), #ff9500);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--primary-dark);
+            box-shadow: 0 5px 15px rgba(255, 204, 0, 0.4);
+            transition: var(--transition);
+        }
+        
+        .logo:hover .logo-icon {
+            transform: rotate(15deg) scale(1.1);
+            box-shadow: 0 8px 20px rgba(255, 204, 0, 0.6);
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-text h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            background: linear-gradient(to right, white, var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 1px;
+        }
+        
+        .logo-text span {
+            font-size: 12px;
+            color: var(--gray-light);
+            letter-spacing: 1px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            padding: 8px 15px;
+            border-radius: 30px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+        
+        .nav-links a.active {
+            background-color: rgba(255, 204, 0, 0.2);
+            color: var(--secondary);
+        }
+        
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 5px;
+            height: 5px;
+            background-color: var(--secondary);
+            border-radius: 50%;
+        }
+        
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .search-btn,
+        .theme-toggle {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .search-btn:hover,
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+        }
+        /* Main Content */
+        
+        .main-container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        
+        .breadcrumb {
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .breadcrumb a {
+            color: var(--gray-light);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--secondary);
+        }
+        
+        .breadcrumb i {
+            font-size: 12px;
+        }
+        /* Article Hero */
+        
+        .article-hero {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            margin-bottom: 40px;
+            box-shadow: var(--box-shadow);
+            height: 500px;
+        }
+        
+        .article-hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7);
+            transition: transform 0.5s ease;
+        }
+        
+        .article-hero:hover .article-hero-image {
+            transform: scale(1.03);
+        }
+        
+        .article-hero-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 40px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+        }
+        
+        .article-category {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+        
+        .article-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+        }
+        
+        .article-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--gray-light);
+            font-size: 15px;
+        }
+        
+        .meta-item i {
+            color: var(--secondary);
+        }
+        
+        .article-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .btn {
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: none;
+            text-decoration: none;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 114, 206, 0.4);
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 114, 206, 0.6);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+        /* Article Content */
+        
+        .article-container {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 40px;
+        }
+        
+        @media (max-width: 992px) {
+            .article-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .article-content {
+            background: var(--dark-light);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .article-intro {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            padding-left: 20px;
+            border-left: 4px solid var(--secondary);
+            color: #e0e0e0;
+        }
+        
+        .article-body {
+            margin-bottom: 40px;
+        }
+        
+        .article-body p {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            color: #d0d0d0;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(0, 48, 135, 0.2), rgba(0, 114, 206, 0.2));
+            border-left: 5px solid var(--primary-light);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        .highlight-box h3 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .specs-section {
+            margin: 40px 0;
+        }
+        
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            color: var(--secondary);
+        }
+        
+        .section-title i {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 22px;
+        }
+        
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .spec-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 25px;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .spec-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 204, 0, 0.2);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .spec-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: white;
+        }
+        
+        .spec-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+        
+        .spec-card p {
+            color: var(--gray-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .image-gallery {
+            margin: 40px 0;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            height: 200px;
+            position: relative;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-item:hover::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(transparent, rgba(255, 204, 0, 0.3));
+        }
+        /* Sidebar */
+        
+        .article-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .sidebar-widget {
+            background: var(--dark-light);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .widget-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+            color: white;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .widget-title i {
+            color: var(--secondary);
+        }
+        
+        .author-card {
+            text-align: center;
+            padding: 25px 20px;
+        }
+        
+        .author-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            border: 3px solid var(--secondary);
+            padding: 5px;
+            background: var(--dark);
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .author-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+        
+        .author-card p {
+            color: var(--gray-light);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .trending-news {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .trending-item {
+            display: flex;
+            gap: 15px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+        }
+        
+        .trending-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .trending-item:hover {
+            transform: translateX(5px);
+        }
+        
+        .trending-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        
+        .trending-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .trending-item:hover .trending-img img {
+            transform: scale(1.1);
+        }
+        
+        .trending-content h4 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            color: white;
+            line-height: 1.4;
+        }
+        
+        .trending-content span {
+            font-size: 0.85rem;
+            color: var(--gray-light);
+        }
+        /* Share & Comments */
+        
+        .share-section {
+            background: var(--dark-light);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-top: 40px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .share-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .share-btn {
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            transition: var(--transition);
+            flex: 1;
+            min-width: 150px;
+            justify-content: center;
+        }
+        
+        .share-facebook {
+            background: #3b5998;
+            color: white;
+        }
+        
+        .share-twitter {
+            background: #1da1f2;
+            color: white;
+        }
+        
+        .share-whatsapp {
+            background: #25d366;
+            color: white;
+        }
+        
+        .share-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .comments-section {
+            background: var(--dark-light);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-top: 40px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .comment-form {
+            margin-bottom: 40px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-light);
+            background: rgba(255, 255, 255, 0.08);
+        }
+        
+        .comment-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .comment-item {
+            display: flex;
+            gap: 20px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            transition: var(--transition);
+        }
+        
+        .comment-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateX(5px);
+        }
+        
+        .comment-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .comment-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: white;
+        }
+        
+        .comment-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            color: var(--gray-light);
+        }
+        
+        .comment-text {
+            color: #d0d0d0;
+            line-height: 1.6;
+        }
+        /* Related Articles */
+        
+        .related-articles {
+            margin-top: 60px;
+        }
+        
+        .related-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .related-card {
+            background: var(--dark-light);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .related-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--box-shadow-hover);
+        }
+        
+        .related-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .related-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .related-card-content {
+            padding: 25px;
+        }
+        
+        .related-card-category {
+            display: inline-block;
+            background: rgba(255, 55, 95, 0.2);
+            color: var(--accent);
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .related-card-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+            color: white;
+        }
+        
+        .related-card-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--gray-light);
+            font-size: 0.9rem;
+        }
+        /* Footer */
+        
+        .footer {
+            background: var(--dark-light);
+            margin-top: 80px;
+            padding-top: 60px;
+            border-top: 2px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo-icon {
+            background: linear-gradient(135deg, var(--secondary), #ff9500);
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--primary-dark);
+        }
+        
+        .footer-logo-text h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .footer-links h4 {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            color: white;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-links h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--secondary);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: var(--gray-light);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+        
+        .footer-newsletter p {
+            color: var(--gray-light);
+            margin-bottom: 20px;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .newsletter-btn {
+            padding: 12px 25px;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .newsletter-btn:hover {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            transform: scale(1.05);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--gray-light);
+            font-size: 0.9rem;
+        }
+        /* Scroll to Top */
+        
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 48, 135, 0.4);
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 100;
+        }
+        
+        .scroll-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 48, 135, 0.6);
+        }
+        /* Animations */
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        /* Responsive */
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .article-title {
+                font-size: 2.2rem;
+            }
+            .article-hero {
+                height: 400px;
+            }
+            .article-hero-content {
+                padding: 25px;
+            }
+            .article-content {
+                padding: 25px;
+            }
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+            .share-buttons {
+                flex-direction: column;
+            }
+            .comment-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        }
+        /* Dark Mode Variations */
+        
+        body.light-mode {
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        
+        body.light-mode .header {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%);
+        }
+        
+        body.light-mode .article-content,
+        body.light-mode .sidebar-widget,
+        body.light-mode .share-section,
+        body.light-mode .comments-section,
+        body.light-mode .related-card,
+        body.light-mode .footer {
+            background: white;
+            color: #333;
+        }
+        
+        body.light-mode .article-body p,
+        body.light-mode .comment-text {
+            color: #555;
+        }
+        
+        body.light-mode .spec-card,
+        body.light-mode .comment-item {
+            background: #f8f9fa;
+        }
+        
+        body.light-mode .form-control {
+            background: #f8f9fa;
+            color: #333;
+            border-color: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-gamepad"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>GAMETECH</h1>
+                    <span>NEWS & REVIEWS</span>
+                </div>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html" class="active"><i class="fas fa-home"></i> Beranda</a>
+                <a href="#"><i class="fas fa-newspaper"></i> Berita</a>
+                <a href="#"><i class="fas fa-gamepad"></i> Konsol</a>
+                <a href="#"><i class="fas fa-video"></i> Game</a>
+                <a href="#"><i class="fas fa-microchip"></i> Teknologi</a>
+                <a href="#"><i class="fas fa-info-circle"></i> Tentang</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+                <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb animate-fade-in-up">
+            <a href="index.html"><i class="fas fa-home"></i> Beranda</a>
+            <i class="fas fa-chevron-right"></i>
+            <a href="#"><i class="fas fa-newspaper"></i> Berita</a>
+            <i class="fas fa-chevron-right"></i>
+            <a href="#"><i class="fas fa-gamepad"></i> Konsol</a>
+            <i class="fas fa-chevron-right"></i>
+            <span style="color: var(--secondary);">PlayStation 5 Pro</span>
+        </div>
+
+        <!-- Article Hero -->
+        <section class="article-hero animate-fade-in-up">
+            <img src="https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="PlayStation 5 Pro" class="article-hero-image">
+            <div class="article-hero-content">
+                <span class="article-category">KONSOL</span>
+                <h1 class="article-title">PlayStation 5 Pro Diumumkan, Spesifikasi Lebih Tinggi</h1>
+                <div class="article-meta">
+                    <div class="meta-item"><i class="far fa-user"></i> Redaksi GameTech</div>
+                    <div class="meta-item"><i class="far fa-calendar"></i> 15 Oktober 2025</div>
+                    <div class="meta-item"><i class="far fa-clock"></i> 5 jam lalu</div>
+                    <div class="meta-item"><i class="far fa-eye"></i> 2.5k dilihat</div>
+                    <div class="meta-item"><i class="far fa-comments"></i> 32 komentar</div>
+                </div>
+                <div class="article-actions">
+                    <a href="index.html" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Kembali ke Beranda</a>
+                    <button class="btn btn-secondary" id="shareBtn"><i class="fas fa-share-alt"></i> Bagikan</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Article Container -->
+        <div class="article-container">
+            <!-- Main Article Content -->
+            <article class="article-content">
+                <div class="article-intro">
+                    Sony resmi mengumumkan konsol PlayStation 5 Pro dengan peningkatan performa signifikan yang akan menghadirkan pengalaman gaming generasi berikutnya.
+                </div>
+
+                <div class="article-body">
+                    <p>Setelah spekulasi yang berlangsung selama berbulan-bulan, Sony akhirnya secara resmi mengumumkan PlayStation 5 Pro, varian premium dari konsol generasi terkini mereka. Konsol baru ini menjanjikan peningkatan performa yang signifikan
+                        dibandingkan PS5 standar, dengan fokus pada gaming 8K, ray tracing yang lebih baik, dan frame rate yang lebih tinggi.</p>
+
+                    <div class="highlight-box">
+                        <h3><i class="fas fa-bolt"></i> Update Terbaru</h3>
+                        <p>Sony mengkonfirmasi bahwa PlayStation 5 Pro akan mendukung backward compatibility dengan semua game PS5 dan sebagian besar game PS4. Konsol ini juga akan dilengkapi dengan DualSense Pro controller baru dengan fitur haptic feedback
+                            yang ditingkatkan.</p>
+                    </div>
+
+                    <p>Pengumuman ini dilakukan dalam acara khusus "Future of Play" yang diselenggarakan oleh Sony Interactive Entertainment. Menurut CEO Jim Ryan, PS5 Pro dirancang untuk memenuhi kebutuhan gamer yang menginginkan pengalaman terbaik dengan
+                        teknologi paling mutakhir.</p>
+
+                    <p>PS5 Pro diharapkan dapat mendukung gaming pada resolusi 8K dengan frame rate yang stabil, sesuatu yang sebelumnya sulit dicapai oleh konsol rumahan. Teknologi ray tracing juga akan ditingkatkan secara signifikan, memberikan pencahayaan,
+                        bayangan, dan refleksi yang lebih realistis dalam game.</p>
+                </div>
+
+                <!-- Specs Section -->
+                <div class="specs-section">
+                    <div class="section-title">
+                        <i class="fas fa-microchip"></i>
+                        <h2>Spesifikasi Teknis PlayStation 5 Pro</h2>
+                    </div>
+
+                    <div class="specs-grid">
+                        <div class="spec-card">
+                            <div class="spec-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h4>CPU Custom AMD</h4>
+                            <p>Zen 2 dengan 8 core/16 threads, kecepatan clock hingga 3.8GHz (peningkatan 15% dari PS5 standar). Mendukung teknologi AI untuk upscaling dan rendering adaptif.</p>
+                        </div>
+
+                        <div class="spec-card">
+                            <div class="spec-icon">
+                                <i class="fas fa-tachometer-alt"></i>
+                            </div>
+                            <h4>GPU RDNA 3</h4>
+                            <p>AMD RDNA 3 custom dengan 60 Compute Units, mendukung ray tracing hardware-accelerated, 8K output, dan performa 2x lebih cepat dari PS5 standar.</p>
+                        </div>
+
+                        <div class="spec-card">
+                            <div class="spec-icon">
+                                <i class="fas fa-memory"></i>
+                            </div>
+                            <h4>Memori 18GB GDDR6</h4>
+                            <p>18GB GDDR6 dengan bandwidth 648GB/s (peningkatan 28% dari PS5 standar). Memungkinkan texture dan asset yang lebih detail dengan loading lebih cepat.</p>
+                        </div>
+
+                        <div class="spec-card">
+                            <div class="spec-icon">
+                                <i class="fas fa-hdd"></i>
+                            </div>
+                            <h4>SSD NVMe 2TB</h4>
+                            <p>SSD NVMe custom 2TB dengan kecepatan baca 8GB/s (peningkatan 2x dari PS5 standar). Waktu loading game dipersingkat hingga 70%.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Gallery -->
+                <div class="image-gallery">
+                    <div class="section-title">
+                        <i class="fas fa-images"></i>
+                        <h2>Galeri PlayStation 5 Pro</h2>
+                    </div>
+
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <img src="https://i.pinimg.com/1200x/be/76/7e/be767e78f76491d297104777627b2f17.jpg" alt="PS5 Pro Design">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1457&q=80" alt="PS5 Pro Controller">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1607853202273-797f1c22a38e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="PS5 Pro Gaming">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- More Content -->
+                <div class="article-body">
+                    <p>Menurut laporan dari developer yang telah menerima kit pengembangan, PS5 Pro mampu memberikan performa hingga 2x lebih cepat dalam rendering grafis dibandingkan PS5 standar. Ini berarti game yang berjalan pada 60fps di PS5 standar
+                        bisa mencapai 120fps di PS5 Pro dengan pengaturan grafis yang sama.</p>
+
+                    <p>Sony juga mengumumkan bahwa PS5 Pro akan dilengkapi dengan teknologi "Smart Delivery" yang memungkinkan gamer yang telah membeli game PS5 untuk mendapatkan versi Pro secara gratis dengan peningkatan grafis dan performa otomatis.</p>
+
+                    <p>Harga dan tanggal rilis resmi belum diumumkan, namun analis industri memperkirakan PS5 Pro akan dijual dengan harga sekitar $599-$649 dan dirilis pada akhir 2024. Sony berjanji akan memberikan informasi lebih lanjut dalam beberapa
+                        bulan mendatang.</p>
+                </div>
+            </article>
+
+            <!-- Sidebar -->
+            <aside class="article-sidebar">
+                <!-- Author Card -->
+                <div class="sidebar-widget author-card">
+                    <div class="author-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Redaksi GameTech">
+                    </div>
+                    <h4>Redaksi GameTech</h4>
+                    <p>Tim redaksi GameTech News dengan pengalaman lebih dari 10 tahun di industri gaming dan teknologi.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+
+                <!-- Trending News -->
+                <div class="sidebar-widget">
+                    <div class="widget-title">
+                        <i class="fas fa-fire"></i>
+                        <h3>Trending Now</h3>
+                    </div>
+
+                    <div class="trending-news">
+                        <div class="trending-item">
+                            <div class="trending-img">
+                                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Xbox Series X Pro">
+                            </div>
+                            <div class="trending-content">
+                                <h4>Microsoft Sedang Kembangkan Xbox Series X Pro?</h4>
+                                <span><i class="far fa-clock"></i> 2 hari lalu</span>
+                            </div>
+                        </div>
+
+                        <div class="trending-item">
+                            <div class="trending-img">
+                                <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="GTA 6">
+                            </div>
+                            <div class="trending-content">
+                                <h4>GTA 6 Akan Rilis Tahun 2025, Ini Bocorannya</h4>
+                                <span><i class="far fa-clock"></i> 3 hari lalu</span>
+                            </div>
+                        </div>
+
+                        <div class="trending-item">
+                            <div class="trending-img">
+                                <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Game Awards">
+                            </div>
+                            <div class="trending-content">
+                                <h4>Game Awards 2025: Nominasi dan Prediksi Pemenang</h4>
+                                <span><i class="far fa-clock"></i> 5 hari lalu</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="sidebar-widget">
+                    <div class="widget-title">
+                        <i class="fas fa-newspaper"></i>
+                        <h3>Newsletter</h3>
+                    </div>
+                    <p>Dapatkan berita gaming terbaru langsung ke email Anda. Gratis dan tanpa spam.</p>
+                    <div class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Email Anda">
+                        <button class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Share Section -->
+        <div class="share-section animate-fade-in-up">
+            <div class="section-title">
+                <i class="fas fa-share-alt"></i>
+                <h2>Bagikan Berita Ini</h2>
+            </div>
+
+            <div class="share-buttons">
+                <a href="#" class="share-btn share-facebook">
+                    <i class="fab fa-facebook-f"></i> Facebook
+                </a>
+                <a href="#" class="share-btn share-twitter">
+                    <i class="fab fa-twitter"></i> Twitter
+                </a>
+                <a href="#" class="share-btn share-whatsapp">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="#" class="share-btn" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                    <i class="fab fa-telegram"></i> Telegram
+                </a>
+            </div>
+        </div>
+
+        <!-- Comments Section -->
+        <div class="comments-section animate-fade-in-up">
+            <div class="section-title">
+                <i class="far fa-comments"></i>
+                <h2>Komentar (32)</h2>
+            </div>
+
+            <!-- Comment Form -->
+            <div class="comment-form">
+                <h3 style="margin-bottom: 20px; color: white;">Tambah Komentar</h3>
+                <form id="commentForm">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Nama Anda" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Email Anda" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" rows="5" placeholder="Komentar Anda..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Kirim Komentar</button>
+                </form>
+            </div>
+
+            <!-- Comment List -->
+            <div class="comment-list">
+                <div class="comment-item">
+                    <div class="comment-avatar">AR</div>
+                    <div class="comment-content">
+                        <h4>Andi Rahman</h4>
+                        <div class="comment-meta">
+                            <span><i class="far fa-clock"></i> 4 jam yang lalu</span>
+                            <span><i class="fas fa-thumbs-up"></i> 12</span>
+                        </div>
+                        <p class="comment-text">Akhirnya diumumkan juga! Sudah tidak sabar menunggu rilis resminya. Semoga harganya tidak terlalu mahal di Indonesia. Upgrade SSD 2TB sangat diperlukan mengingat ukuran game sekarang.</p>
+                    </div>
+                </div>
+
+                <div class="comment-item">
+                    <div class="comment-avatar">SG</div>
+                    <div class="comment-content">
+                        <h4>Sari Gunawan</h4>
+                        <div class="comment-meta">
+                            <span><i class="far fa-clock"></i> 5 jam yang lalu</span>
+                            <span><i class="fas fa-thumbs-up"></i> 8</span>
+                        </div>
+                        <p class="comment-text">Spesifikasinya impresif banget. Upgrade GPU dan SSD-nya signifikan. Tapi saya baru beli PS5 tahun lalu, sayang banget kalau harus upgrade lagi. Mungkin akan tunggu PS5 Pro Slim nanti.</p>
+                    </div>
+                </div>
+
+                <div class="comment-item">
+                    <div class="comment-avatar">RW</div>
+                    <div class="comment-content">
+                        <h4>Rizky Wibowo</h4>
+                        <div class="comment-meta">
+                            <span><i class="far fa-clock"></i> 6 jam yang lalu</span>
+                            <span><i class="fas fa-thumbs-up"></i> 15</span>
+                        </div>
+                        <p class="comment-text">Teknologi ray tracing yang ditingkatkan pasti akan membuat game seperti Spider-Man 2 dan Horizon Forbidden West semakin epik. Semoga backward compatibility-nya tetap terjaga untuk semua game PS4.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Articles -->
+        <div class="related-articles animate-fade-in-up">
+            <div class="related-header">
+                <div class="section-title">
+                    <i class="fas fa-link"></i>
+                    <h2>Berita Terkait</h2>
+                </div>
+                <a href="index.html" class="btn btn-secondary">Lihat Semua <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="related-grid">
+                <div class="related-card">
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Xbox Series X Pro">
+                    <div class="related-card-content">
+                        <span class="related-card-category">KONSOL</span>
+                        <h3 class="related-card-title">Microsoft Sedang Kembangkan Xbox Series X Pro?</h3>
+                        <div class="related-card-meta">
+                            <span><i class="far fa-clock"></i> 2 hari lalu</span>
+                            <span><i class="far fa-comment"></i> 18 komentar</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="related-card">
+                    <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1457&q=80" alt="Nintendo Switch 2">
+                    <div class="related-card-content">
+                        <span class="related-card-category">KONSOL</span>
+                        <h3 class="related-card-title">Nintendo Switch 2 Akan Diumumkan Tahun Depan</h3>
+                        <div class="related-card-meta">
+                            <span><i class="far fa-clock"></i> 1 minggu lalu</span>
+                            <span><i class="far fa-comment"></i> 45 komentar</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="related-card">
+                    <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Game Baru 2024">
+                    <div class="related-card-content">
+                        <span class="related-card-category">GAME</span>
+                        <h3 class="related-card-title">10 Game Paling Ditunggu di 2024</h3>
+                        <div class="related-card-meta">
+                            <span><i class="far fa-clock"></i> 3 hari lalu</span>
+                            <span><i class="far fa-comment"></i> 62 komentar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo">
+                    <div class="footer-logo-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <div class="footer-logo-text">
+                        <h3>GAMETECH</h3>
+                        <p style="color: var(--gray-light); font-size: 0.9rem;">News & Reviews</p>
+                    </div>
+                </div>
+                <p style="color: var(--gray-light); margin-bottom: 20px;">Sumber berita terpercaya untuk dunia gaming dan teknologi. Menyajikan informasi terkini tentang konsol, game, hardware, dan industri gaming.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Tautan Cepat</h4>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Beranda</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Berita Terbaru</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Review Game</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Perbandingan Konsol</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Forum Diskusi</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Kategori</h4>
+                <ul>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> PlayStation</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Xbox</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Nintendo</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> PC Gaming</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Teknologi</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-newsletter">
+                <h4>Newsletter</h4>
+                <p>Dapatkan update berita gaming terbaru langsung ke inbox Anda.</p>
+                <div class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Email Anda">
+                    <button class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 GameTech News. Semua hak dilindungi. | <a href="#" style="color: var(--secondary); text-decoration: none;">Kebijakan Privasi</a> | <a href="#" style="color: var(--secondary); text-decoration: none;">Syarat Layanan</a></p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // DOM Elements
+        const themeToggle = document.getElementById('themeToggle');
+        const shareBtn = document.getElementById('shareBtn');
+        const commentForm = document.getElementById('commentForm');
+        const scrollTopBtn = document.getElementById('scrollTop');
+
+        // Theme Toggle
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            const icon = themeToggle.querySelector('i');
+            if (document.body.classList.contains('light-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        });
+
+        // Share Button
+        shareBtn.addEventListener('click', () => {
+            if (navigator.share) {
+                navigator.share({
+                        title: document.title,
+                        text: 'Baca berita menarik tentang PlayStation 5 Pro',
+                        url: window.location.href
+                    })
+                    .then(() => console.log('Berhasil dibagikan'))
+                    .catch(error => console.log('Error sharing:', error));
+            } else {
+                // Fallback untuk browser yang tidak mendukung Web Share API
+                alert('Bagikan melalui: Facebook, Twitter, WhatsApp, atau copy link ini: ' + window.location.href);
+            }
+        });
+
+        // Comment Form Submission
+        commentForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Komentar Anda berhasil dikirim! Terima kasih atas partisipasinya.');
+            commentForm.reset();
+
+            // Simulasi penambahan komentar baru
+            const commentList = document.querySelector('.comment-list');
+            const newComment = document.createElement('div');
+            newComment.className = 'comment-item';
+            newComment.innerHTML = `
+                <div class="comment-avatar">NT</div>
+                <div class="comment-content">
+                    <h4>Pengguna Baru</h4>
+                    <div class="comment-meta">
+                        <span><i class="far fa-clock"></i> Baru saja</span>
+                        <span><i class="fas fa-thumbs-up"></i> 0</span>
+                    </div>
+                    <p class="comment-text">Terima kasih untuk beritanya! Informasi yang sangat berguna.</p>
+                </div>
+            `;
+            commentList.prepend(newComment);
+
+            // Animasi untuk komentar baru
+            newComment.style.opacity = '0';
+            newComment.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                newComment.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                newComment.style.opacity = '1';
+                newComment.style.transform = 'translateY(0)';
+            }, 100);
+
+            // Update jumlah komentar
+            const commentTitle = document.querySelector('.comments-section .section-title h2');
+            const currentCount = parseInt(commentTitle.textContent.match(/\d+/)[0]);
+            commentTitle.textContent = `Komentar (${currentCount + 1})`;
+        });
+
+        // Scroll to Top
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add('active');
+            } else {
+                scrollTopBtn.classList.remove('active');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Search Button
+        document.querySelector('.search-btn').addEventListener('click', () => {
+            const searchInput = document.createElement('input');
+            searchInput.type = 'text';
+            searchInput.placeholder = 'Cari berita, game, atau konsol...';
+            searchInput.style.cssText = `
+                position: absolute;
+                top: 100%;
+                right: 20px;
+                padding: 15px;
+                width: 300px;
+                border-radius: 30px;
+                border: none;
+                background: var(--dark-light);
+                color: white;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+                outline: none;
+                z-index: 1000;
+            `;
+
+            document.querySelector('.header').appendChild(searchInput);
+            searchInput.focus();
+
+            searchInput.addEventListener('blur', () => {
+                setTimeout(() => {
+                    if (document.body.contains(searchInput)) {
+                        searchInput.remove();
+                    }
+                }, 200);
+            });
+
+            searchInput.addEventListener('keyup', (e) => {
+                if (e.key === 'Enter') {
+                    alert(`Mencari: "${searchInput.value}" - Akan diarahkan ke halaman pencarian`);
+                    searchInput.remove();
+                }
+            });
+        });
+
+        // Gallery Image Click
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const imgSrc = item.querySelector('img').src;
+                const lightbox = document.createElement('div');
+                lightbox.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0,0,0,0.9);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 2000;
+                    cursor: pointer;
+                `;
+
+                const img = document.createElement('img');
+                img.src = imgSrc;
+                img.style.cssText = `
+                    max-width: 90%;
+                    max-height: 90%;
+                    border-radius: 10px;
+                    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+                `;
+
+                lightbox.appendChild(img);
+                document.body.appendChild(lightbox);
+
+                lightbox.addEventListener('click', () => {
+                    lightbox.remove();
+                });
+            });
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.spec-card, .trending-item, .related-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Simulate view count increase
+        window.addEventListener('load', () => {
+            const viewCountElement = document.querySelector('.fa-eye').parentElement;
+            const currentViews = parseInt(viewCountElement.textContent.match(/\d+/)[0]);
+
+            // Simulate view count increment every 10 seconds
+            setInterval(() => {
+                const newViews = currentViews + Math.floor(Math.random() * 5) + 1;
+                viewCountElement.innerHTML = `<i class="far fa-eye"></i> ${newViews}k dilihat`;
+            }, 10000);
+        });
+    </script>
+</body>
+
+</html>

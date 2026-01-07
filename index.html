@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KabarinGame</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Header (tetap sama) -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-gamepad"></i> KabarinGame
+                </a>
+
+                <ul class="nav-links">
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="index.html#news">Berita</a></li>
+                    <li><a href="index.html#reviews">Review</a></li>
+                    <li><a href="index.html#tips">Tips & Trik</a></li>
+                    <li><a href="index.html#esports">E-Sports</a></li>
+                </ul>
+
+                <div class="user-section">
+                    <div id="userInfo" class="user-info" style="display: none;">
+                        <span class="user-name" id="displayUserName"></span>
+                        <button class="btn btn-small" id="logoutBtn">Logout</button>
+                    </div>
+                    <div id="authButtons">
+                        <button class="btn btn-small" id="loginBtn">Login</button>
+                        <button class="btn btn-small btn-outline" id="registerBtn">Daftar</button>
+                    </div>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section (tetap sama) -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Informasi dan Kabar Gaming </h1>
+            <p>Berita terbaru,ulasan game,tips & trik,dan informasi e-sports dalam satu platform</p>
+            <a href="#news" class="btn">Jelajahi Konten</a>
+        </div>
+    </section>
+
+    <!-- News Section (tetap sama) -->
+    <section class="news" id="news">
+        <div class="container">
+            <h2 class="section-title">Berita Terbaru</h2>
+
+            <div class="news-grid">
+                <div class="news-card">
+                    <img src="elden ring.jpg" alt="Game Terbaru">
+                    <div class="news-content">
+                        <span class="news-tag">Hot News</span>
+                        <h3>Game RPG Terbaru 'Elden Ring' Rilis Ekspansi Baru</h3>
+                        <p>FromSoftware mengumumkan ekspansi baru untuk game RPG populer mereka dengan konten yang lebih menantang.</p>
+                        <div class="news-meta">
+                            <span><i class="far fa-clock"></i> 2 jam lalu</span>
+                            <span><i class="far fa-comment"></i> 45 komentar</span>
+                        </div>
+                        <a href="eldenring.html" class="btn btn-small">Baca Selengkapnya</a>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <img src="Sony-PlayStation-5-Pro.png" alt="Berita 1">
+                    <div class="news-content">
+                        <span class="news-tag">Konsol</span>
+                        <h3>PlayStation 5 Pro Diumumkan, Spesifikasi Lebih Tinggi</h3>
+                        <p>Sony resmi mengumumkan konsol PlayStation 5 Pro dengan peningkatan performa signifikan.</p>
+                        <div class="news-meta">
+                            <span><i class="far fa-clock"></i> 5 jam lalu</span>
+                            <span><i class="far fa-comment"></i> 32 komentar</span>
+                        </div>
+                        <a href="ps5pro.html" class="btn btn-small">Baca Selengkapnya</a>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <img src="mobile-legends-new-hero.jpg" alt="Berita 2">
+                    <div class="news-content">
+                        <span class="news-tag">Mobile</span>
+                        <h3>Mobile Legends Rilis Hero Baru dengan Ability Unik</h3>
+                        <p>Moonton memperkenalkan hero baru dalam update terbaru Mobile Legends: Bang Bang.</p>
+                        <div class="news-meta">
+                            <span><i class="far fa-clock"></i> 1 hari lalu</span>
+                            <span><i class="far fa-comment"></i> 28 komentar</span>
+                        </div>
+                        <a href="mlbb.html" class="btn btn-small">Baca Selengkapnya</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-footer">
+                <a href="" class="btn btn-outline">Lihat Semua Berita</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section (tetap sama) -->
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <h2 class="section-title">Ulasan Game</h2>
+
+            <div class="review-cards">
+                <!-- Cyberpunk 2077 -->
+                <div class="review-card" data-game="cyberpunk">
+                    <img src="CP77_Phantom_Liberty.jpg" alt="Game 1">
+                    <div class="review-content">
+                        <div class="review-header">
+                            <div class="review-title">Cyberpunk 2077: Phantom Liberty</div>
+                            <div class="review-score">9.2/10</div>
+                        </div>
+                        <p>Ekspansi yang membawa kehidupan baru ke Night City dengan cerita yang mendalam dan gameplay yang ditingkatkan.</p>
+
+                        <div class="user-ratings" id="ratings-cyberpunk">
+                            <!-- Ratings will be loaded dynamically -->
+                        </div>
+
+                        <button class="btn btn-small add-rating-btn" data-game="cyberpunk" data-game-name="Cyberpunk 2077">Beri Rating</button>
+                    </div>
+                </div>
+
+                <!-- Zelda -->
+                <div class="review-card" data-game="zelda">
+                    <img src="zeldaTotk.jpg" alt="Game 2">
+                    <div class="review-content">
+                        <div class="review-header">
+                            <div class="review-title">The Legend of Zelda: Tears of the Kingdom</div>
+                            <div class="review-score">9.8/10</div>
+                        </div>
+                        <p>Sequel yang sempurna untuk Breath of the Wild dengan mekanika baru yang inovatif dan dunia yang lebih luas.</p>
+
+                        <div class="user-ratings" id="ratings-zelda">
+                            <!-- Ratings will be loaded dynamically -->
+                        </div>
+
+                        <button class="btn btn-small add-rating-btn" data-game="zelda" data-game-name="The Legend of Zelda: Tears of the Kingdom">Beri Rating</button>
+                    </div>
+                </div>
+
+                <!-- Baldur's Gate 3 -->
+                <div class="review-card" data-game="baldurs-gate">
+                    <img src="baldurs-gate-3.jpg" alt="Game 3">
+                    <div class="review-content">
+                        <div class="review-header">
+                            <div class="review-title">Baldur's Gate 3</div>
+                            <div class="review-score">10/10</div>
+                        </div>
+                        <p>Masterpiece RPG yang menetapkan standar baru untuk genre dengan cerita yang kompleks dan kebebasan tak terbatas.</p>
+
+                        <div class="user-ratings" id="ratings-baldurs-gate">
+                            <!-- Ratings will be loaded dynamically -->
+                        </div>
+
+                        <button class="btn btn-small add-rating-btn" data-game="baldurs-gate" data-game-name="Baldur's Gate 3">Beri Rating</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tips & Trik Section (BARU) -->
+    <section class="tips-tricks" id="tips">
+        <div class="container">
+            <h2 class="section-title">Tips & Trik Gaming</h2>
+            <p class="section-subtitle">Tingkatkan skill gamingmu dengan tips dari para pro player</p>
+
+            <div class="tips-grid">
+                <!-- Tip 1 -->
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-crosshairs"></i>
+                    </div>
+                    <div class="tip-content">
+                        <h3>Tips Aiming FPS</h3>
+                        <p>Pelajari teknik crosshair placement dan pre-aiming untuk meningkatkan akurasi tembakan di game FPS seperti Valorant dan CS:GO.</p>
+                        <div class="tip-meta">
+                            <span class="tip-category"><i class="fas fa-tag"></i> FPS</span>
+                            <span class="tip-difficulty"><i class="fas fa-chart-line"></i> Menengah</span>
+                        </div>
+                        <a href="https://progamestuff.com/how-to-improve-your-aim-in-fps-games/" class="tip-link">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Tip 2 -->
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-chess"></i>
+                    </div>
+                    <div class="tip-content">
+                        <h3>Strategi Game MOBA</h3>
+                        <p>Pahami peran dan posisi hero, serta timing yang tepat untuk ganking dan teamfight di game MOBA seperti Dota 2 dan Mobile Legends.</p>
+                        <div class="tip-meta">
+                            <span class="tip-category"><i class="fas fa-tag"></i> MOBA</span>
+                            <span class="tip-difficulty"><i class="fas fa-chart-line"></i> Lanjutan</span>
+                        </div>
+                        <a href="https://www.sahabattekno.com/2025/03/tips-dan-strategi-jitu-menang-game-moba.html" class="tip-link">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Tip 3 -->
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <div class="tip-content">
+                        <h3>Manajemen Ekonomi Game</h3>
+                        <p>Pelajari cara mengelola resource dan mata uang dalam game untuk progress yang lebih efisien di game RPG dan strategi.</p>
+                        <div class="tip-meta">
+                            <span class="tip-category"><i class="fas fa-tag"></i> Strategi</span>
+                            <span class="tip-difficulty"><i class="fas fa-chart-line"></i> Pemula</span>
+                        </div>
+                        <a href="https://www.idntimes.com/tech/gadget/5-game-simulasi-manajemen-terbaik-yang-menantang-belajar-banyak-hal-01-bfjms-49tyjf" class="tip-link">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Tip 4 -->
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="tip-content">
+                        <h3>Optimasi Setting Game</h3>
+                        <p>Optimalkan pengaturan grafis dan kontrol untuk mendapatkan performa terbaik sesuai dengan spesifikasi hardware Anda.</p>
+                        <div class="tip-meta">
+                            <span class="tip-category"><i class="fas fa-tag"></i> PC Gaming</span>
+                            <span class="tip-difficulty"><i class="fas fa-chart-line"></i> Pemula</span>
+                        </div>
+                        <a href="https://tenindonesia.com/tips-optimasi-setting-windows-untuk-gaming/" class="tip-link">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-footer">
+                <a href="https://insidevirtualgoods.com/tips-dan-trik-menjadi-pro-player/" class="btn btn-outline">Lihat Semua Tips & Trik</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- E-Sports Section (BARU) -->
+    <section class="esports" id="esports">
+        <div class="container">
+            <h2 class="section-title">Berita E-Sports</h2>
+            <p class="section-subtitle">Update turnamen, jadwal pertandingan, dan berita tim e-sports terbaru</p>
+
+            <div class="esports-content">
+                <!-- Featured Tournament -->
+                <div class="featured-tournament">
+                    <div class="tournament-header">
+                        <h3>Turnamen Utama Minggu Ini</h3>
+                        <span class="tournament-prize">$2,000,000 Prize Pool</span>
+                    </div>
+                    <div class="tournament-card">
+                        <div class="tournament-game">
+                            <img src="https://i.pinimg.com/1200x/8a/8b/50/8a8b50da2bc4afa933718061fe291520.jpg" alt="Dota 2">
+                            <div class="tournament-info">
+                                <h4>The International 2025</h4>
+                                <p>Dota 2 World Championship</p>
+                                <div class="tournament-details">
+                                    <span><i class="far fa-calendar"></i> February 27, 2025 - 23:55 WIB</span>
+                                    <span><i class="fas fa-map-marker-alt"></i> Stockholm, Swedia</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tournament-teams">
+                            <div class="team">
+                                <img src="https://i.pinimg.com/1200x/b0/9a/17/b09a17f6b3838c64111e6cc61366122b.jpg" alt="Team Spirit">
+                                <span>Team Spirit</span>
+                            </div>
+                            <div class="vs">VS</div>
+                            <div class="team">
+                                <img src="https://i.pinimg.com/1200x/cb/10/e9/cb10e93ffcd4bd199305bfb9a1ea0fc1.jpg" alt="Team Liquid">
+                                <span>Team Liquid</span>
+                            </div>
+                        </div>
+                        <div class="tournament-actions">
+                            <a href="https://liquipedia.net/dota2/Match:ID_Y8vgYcdoqG_0003" class="btn btn-small"><i class="far fa-calendar-alt"></i> Tambah ke Kalender</a>
+                            <a href="https://bo3.gg/id/dota2/matches/team-spirit-vs-team-liquid-dota2-22-11-2025" class="btn btn-small btn-outline"><i class="fas fa-play-circle"></i> Tonton Live</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- E-Sports News -->
+                <div class="esports-news">
+                    <h3>Berita E-Sports Terbaru</h3>
+                    <div class="esports-news-list">
+                        <!-- News 1 -->
+                        <div class="esports-news-item">
+                            <div class="esports-news-content">
+                                <span class="esports-news-tag">Valorant</span>
+                                <h4>Team RRQ Raih Juara di VCT Pacific 2025</h4>
+                                <p>Tim RRQ berhasil mengalahkan Paper Rex dengan skor 3-1 di final VCT Pacific 2025.</p>
+                                <div class="esports-news-meta">
+                                    <span><i class="far fa-clock"></i> 3 jam lalu</span>
+                                </div>
+                            </div>
+                            <img src="https://i.pinimg.com/736x/94/ee/5e/94ee5e38a73abbee5c117acebc771107.jpg" alt="Valorant Tournament">
+                        </div>
+
+                        <!-- News 2 -->
+                        <div class="esports-news-item">
+                            <div class="esports-news-content">
+                                <span class="esports-news-tag">Mobile Legends</span>
+                                <h4>ONIC Esports Juara MPL Indonesia Season 16</h4>
+                                <p>ONIC Esports berhasil meraih gelar juara di MPL Indonesia Season 16 setelah mengalahkan lawan-lawannya dengan strategi yang solid.</p>
+                                <div class="esports-news-meta">
+                                    <span><i class="far fa-clock"></i> 1 hari lalu</span>
+                                </div>
+                            </div>
+                            <img src="https://i.pinimg.com/736x/03/81/00/038100d4062ee805e41a7b73e8b7ae18.jpg" alt="Mobile Legends">
+                        </div>
+
+                        <!-- News 3 -->
+                        <div class="esports-news-item">
+                            <div class="esports-news-content">
+                                <span class="esports-news-tag">CS:GO</span>
+                                <h4>FaZe Clan Juara BLAST Premier World Final 2025</h4>
+                                <p>FaZe Clan kembali menunjukkan dominasi dengan meraih gelar juara di BLAST Premier World Final.</p>
+                                <div class="esports-news-meta">
+                                    <span><i class="far fa-clock"></i> 2 hari lalu</span>
+                                </div>
+                            </div>
+                            <img src="https://i.pinimg.com/1200x/2b/4b/7c/2b4b7c1149f7cc9047f5e804f462c21b.jpg" alt="CS:GO">
+                        </div>
+                    </div>
+
+                    <div class="section-footer">
+                        <a href="https://www.ligagame.tv/" class="btn btn-outline">Lihat Semua Berita E-Sports</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Modal (tetap sama) -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Login ke Info Gaming</h3>
+                <button class="close-modal" data-modal="loginModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginUsername">Username</label>
+                        <input type="text" id="loginUsername" placeholder="Masukkan username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" placeholder="Masukkan password" required>
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                </form>
+                <p class="form-footer">Belum punya akun? <a href="#" id="showRegister">Daftar di sini</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Modal (tetap sama) -->
+    <div class="modal" id="registerModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Daftar Akun Baru</h3>
+                <button class="close-modal" data-modal="registerModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="registerUsername">Username</label>
+                        <input type="text" id="registerUsername" placeholder="Pilih username" required>
+                        <small class="form-text">Username harus 3-20 karakter</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmail">Email</label>
+                        <input type="email" id="registerEmail" placeholder="Masukkan email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword">Password</label>
+                        <input type="password" id="registerPassword" placeholder="Buat password" required>
+                        <small class="form-text">Password minimal 6 karakter</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerConfirmPassword">Konfirmasi Password</label>
+                        <input type="password" id="registerConfirmPassword" placeholder="Ulangi password" required>
+                    </div>
+                    <button type="submit" class="btn">Daftar</button>
+                </form>
+                <p class="form-footer">Sudah punya akun? <a href="#" id="showLogin">Login di sini</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rating Modal (tetap sama) -->
+    <div class="modal" id="ratingModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="ratingModalTitle">Beri Rating Game</h3>
+                <button class="close-modal" data-modal="ratingModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="ratingForm">
+                    <input type="hidden" id="ratingGameId">
+                    <div class="form-group">
+                        <label>Rating</label>
+                        <div class="star-rating">
+                            <input type="radio" id="star5" name="rating" value="5">
+                            <label for="star5"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star4" name="rating" value="4">
+                            <label for="star4"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star3" name="rating" value="3">
+                            <label for="star3"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star2" name="rating" value="2">
+                            <label for="star2"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star1" name="rating" value="1">
+                            <label for="star1"><i class="fas fa-star"></i></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="ratingComment">Komentar (opsional)</label>
+                        <textarea id="ratingComment" placeholder="Bagikan pengalaman Anda dengan game ini" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn">Kirim Rating</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer (tetap sama) -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Tentang KabarinGame</h3>
+                    <p>KabarinGame adalah portal informasi gaming minimalis yang menyajikan berita terbaru, ulasan game, tips & trik, dan informasi e-sports.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Kategori</h3>
+                    <ul class="footer-links">
+                        <li><a href="berita.html">Berita Terbaru</a></li>
+                        <li><a href="#reviews">Ulasan Game</a></li>
+                        <li><a href="#tips">Tips & Trik</a></li>
+                        <li><a href="#esports">E-Sports</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Platform</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://store.epicgames.com/en-US/c/platform-games">PC</a></li>
+                        <li><a href="https://www.playstation.com/en-id/games/platform-8/">PlayStation</a></li>
+                        <li><a href="https://www.xbox.com/en-US/">Xbox</a></li>
+                        <li><a href="https://www.thegamer.com/10-best-platformers-on-nintendo-switch/">Nintendo</a></li>
+                        <li><a href="#platform-mobile">Mobile</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 KabarinGame. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/ratings.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
